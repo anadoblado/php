@@ -18,29 +18,34 @@
                     //$result = $conex->query("SELECT * FROM jugadores WHERE " . $opcion . " = '" . $valor . "'");
                     $result = $conex->query("SELECT * FROM jugadores WHERE " . $opcion . " LIKE '%" . $valor . "%'");
                     echo $conex->error;
+                    if (!$result->num_rows) {
+                        echo 'NO HAY COINCIDENCIAS CON TU BÚSQUEDA, PREUBA OTRA';
+                    } else {
+                        echo '<table border="1">';
+                        echo ' <th>Nombre</th>';
+                        echo ' <th>DNI</th>';
+                        echo ' <th>Dorsal</th>';
+                        echo '<th>Posición</th>';
+                        echo ' <th>Equipo</th>';
+                        echo '<th>Goles</th>';
 
-                    echo '<table border="1">';
-                    echo ' <th>Nombre</th>';
-                    echo ' <th>DNI</th>';
-                    echo ' <th>Dorsal</th>';
-                    echo '<th>Posición</th>';
-                    echo ' <th>Equipo</th>';
-                    echo '<th>Goles</th>';
-
-                    while ($obj = $result->fetch_object()) {
+                        while ($obj = $result->fetch_object()) {
                         //$pos = explode(',', $obj->Posicion);
-                        echo'<tr>';
-                        echo'<td>' . $obj->Nombre . '</td>';
-                        echo'<td>' . $obj->DNI . '</td>';
-                        echo'<td>' . $obj->Dorsal . '</td>';
-                        echo'<td>' . $obj->Posicion . '</td>';
+                             echo'<tr>';
+                            echo'<td>' . $obj->Nombre . '</td>';
+                            echo'<td>' . $obj->DNI . '</td>';
+                            echo'<td>' . $obj->Dorsal . '</td>';
+                            echo'<td>' . $obj->Posicion . '</td>';
 //                        foreach ($pos as $value) {
 //                            echo '<td>' . $value . '</td>';
 //                        }
-                        echo'<td>' . $obj->Equipo . '</td>';
-                        echo'<td>' . $obj->Goles . '</td>';
+                            echo'<td>' . $obj->Equipo . '</td>';
+                            echo'<td>' . $obj->Goles . '</td>';
+                       
+                        }
+                        echo '</table>';
                     }
-                    echo '</table>';
+                    
                     ?>
 
                     <form action="buscar.php">
