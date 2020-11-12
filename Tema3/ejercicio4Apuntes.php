@@ -22,11 +22,17 @@ $ok = true;
  }else{
        echo 'transaccion else 1';
  }
- if($conex->exec("UPDATE stock SET unidades=2 WHERE tienda=2 and producto='PAPYRE62GB'") === 0){
+ if($conex->exec("UPDATE stock SET unidades=1 WHERE tienda=3 and producto='PAPYRE62GB'") === 0){
+     $ok = false;
+     echo 'transaccion 1';
+ }else{
+       echo 'transaccion else 2';
+ }
+ if($conex->exec('INSERT INTO stock VALUES("PAPYRE62GB", 2, 2)') === 0){
      $ok = false;
        echo 'transaccion 99';
  } else {
-       echo 'transaccion ese 2';
+       echo 'transaccion else 3';
 }
  
  if ($ok){

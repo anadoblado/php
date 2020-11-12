@@ -30,7 +30,11 @@
 
                                 while ($fila = $result->fetch_array()) {
 
-                                    echo '<option value="' . $fila['cod'] . '">' . $fila['nombre_corto'] . '</option>';
+                                    echo '<option value="' . $fila['cod'] . '"';
+                                    if(!empty($_POST['producto']) && $fila['cod']== $_POST['producto']){
+                                        echo 'selected';
+                                    }
+                                           echo  '>' . $fila['nombre_corto'] . '</option>';
                                 }
                             }
                         } else {
@@ -75,7 +79,7 @@
             }
 
             if (isset($_POST['actualizar'])) {
-                echo 'holaaaaaaaaaaaa';
+               
                 $result2 = $conexion->stmt_init();
                 $result2->prepare('UPDATE stock SET unidades=? WHERE tienda=? and producto=?');
                 $result2->bind_param('sss', $unidades, $tienda, $_POST['producto']);
@@ -86,6 +90,7 @@
                 }
                 $result2->close();
                 $conexion->close();
+                echo '<h3>Operación realizada con éxito</h3>';
             }
             ?>
 
