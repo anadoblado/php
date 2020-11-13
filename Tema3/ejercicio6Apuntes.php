@@ -65,8 +65,6 @@
                 <?php
                 if (isset($_POST['actualizar'])) {
 
-
-
                     for ($i = 0; $i < count($_POST['uni']); $i++) {
                         $result = $conex->prepare('UPDATE stock SET unidades=? WHERE tienda=? and producto=?');
                         $producto = $_POST['productos'];
