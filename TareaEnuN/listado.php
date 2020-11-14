@@ -12,10 +12,10 @@
             <h1>Tarea: Listado de productos de una familia </h1>
             <?php
             try {
-                 $opciones = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_SERVER_VERSION);
-            $conex = new PDO('mysql:host=localhost; dbname=dwes; charset=UTF8mb4', 'dwes', 'abc123.', $opciones);
-            $error = $conex->errorInfo();
-            echo $error[2];
+                $opciones = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_SERVER_VERSION);
+                $conex = new PDO('mysql:host=localhost; dbname=dwes; charset=UTF8mb4', 'dwes', 'abc123.', $opciones);
+                $error = $conex->errorInfo();
+                echo $error[2];
                 ?>  
                 <form id="form_seleccion" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                      Familia: <select name="familia">
@@ -46,8 +46,9 @@
                         $consulta = $conex->query('SELECT * FROM producto WHERE familia="' . $elemento . '"');
                     
                          while ($fila = $consulta->fetch(PDO::FETCH_OBJ)) {
-                             echo 'Productos'.$fila->nombre_corto. ' - Precio'.$fila->PVP. '€';
+                             echo 'Productos: '.$fila->nombre_corto. ' - Precio'.$fila->PVP. '€';
                              echo '<button type="submit" name="editar" value="'.$fila->cod.'">Editar</button><br>';
+                             //botón que en el value le paso el código para arrastrarlo al otro archivo
                          }
                     }
                 ?>
