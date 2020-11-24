@@ -1,8 +1,16 @@
 <?php
+session_name();
+session_start();
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+if(!isset($_SESSION['nombre'])){
+    header("location:login.php");
+}else{
+    
+    setcookie('PHPSESSID', "", time() - 3, "/");
+    session_unset();
+    session_destroy();
+    header("location:login.php");
+    //echo $_SESSION['nombre'];
+}
 
+?>
