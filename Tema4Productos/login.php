@@ -7,11 +7,11 @@ if (isset($_POST['enviar']) && isset($_POST['nombre']) && isset($_POST['pass']))
         $conex = new PDO('mysql:host=localhost; dbname=formcookie; charset=UTF8mb4', 'dwes', 'abc123.', $opciones);
         $error = $conex->errorInfo();
         $result = $conex->query("SELECT * FROM datos WHERE nombre='$_POST[nombre]' and password='" . md5($_POST["pass"]) . "'");
-        while ($obj = $result->fetch(PDO::FETCH_OBJ)) {
-            $_SESSION['nombre'] = $obj->nombre;
-            //echo  $_SESSION['nombre'];
-            $_SESSION['password'] = $obj->password;
-        }
+//        while ($obj = $result->fetch(PDO::FETCH_OBJ)) {
+//            $_SESSION['nombre'] = $obj->nombre;
+//            //echo  $_SESSION['nombre'];
+//            $_SESSION['password'] = $obj->password;
+//        }
         if ($result->rowCount()) {
             //session_name($_POST['nombre']);
             session_name();
