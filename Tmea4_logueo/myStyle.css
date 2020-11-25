@@ -14,9 +14,9 @@ line-height: 0px;
 position: absolute;
 left: 50%;
 top: 50%;
-width: 230px;
+width: 300px;
 margin-left: -115px;
-height: 160px;
+height: 200px;
 margin-top: -80px;
 padding:10px;
 border:1px solid #ccc;
@@ -87,7 +87,7 @@ padding: 10px 0;
 }
 .pagproductos #cesta {
 float: right;
-width: 12em;
+width: 15em;
 background-color: #588;
 }
 .pagproductos #cesta h3 {

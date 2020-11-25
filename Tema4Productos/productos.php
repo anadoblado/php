@@ -43,29 +43,30 @@ if (!isset($_SESSION['nombre'])) {
                             unset($_SESSION['cesta']);
                         }
                         ?>
-                        <div id="productos">
-                            <label class="pagcesta"><?php
-                                if (isset($_SESSION['cesta'])) {
-                                    foreach ($_SESSION['cesta'] as $key => $value) {
-                                        echo $key .' x ' .$value['cantidad']. 'ud<br>';
-                                    }
-                                }
-                                ?></label>
-                        </div>
+
+                        <?php
+                        if (isset($_SESSION['cesta'])) {
+                            foreach ($_SESSION['cesta'] as $key => $value) {
+                                echo $value['nombre'] . ' x ' . $value['cantidad'] . 'ud<br>';
+                            }
+                        }
+                        ?>
+
                         <form action="" method="POST">
                             <input type="submit" name="vaciar" value="Vaciar Cesta"  >
                         </form>
                         <form action="cesta.php" method="POST">
-                            <input type="submit" name="comprar" value="Comprar" <?php if(empty($_SESSION['cesta'])) echo 'disabled' ?> >
+                            <input type="submit" name="comprar" value="Comprar" <?php if (empty($_SESSION['cesta'])) echo 'disabled' ?> >
                         </form>
 
                     </div>
-                    <?php
-                    $consulta = $conex->query('SELECT * FROM producto');
+                    <div id="productos">
+                        <?php
+                        $consulta = $conex->query('SELECT * FROM producto');
 
-                    while ($fila = $consulta->fetch(PDO::FETCH_OBJ)) {
-                        ?>
-                        <div id="productos">
+                        while ($fila = $consulta->fetch(PDO::FETCH_OBJ)) {
+                            ?>
+
                             <form action="" method="post">
                                 <button type="submit" name="enviar" value="<?php echo $fila->cod; ?>" readonly>Añadir a la cesta</button>
                                 <input type="text" name="nombre" value="<?php echo $fila->nombre_corto; ?>" readonly>
@@ -73,25 +74,23 @@ if (!isset($_SESSION['nombre'])) {
                                 <input type="text" name="precio" value="<?php echo $fila->PVP; ?>" readonly>€
                                 <input type="hidden" name="descripcion" value="<?php echo $fila->descripcion; ?>">
                             </form>
-                        </div>
-                        <?php
-                        // echo 'Productos: ' . $fila->nombre_corto . ' - Precio' . $fila->PVP . '€';
-                        //botón que en el value le paso el código para arrastrarlo al otro archivo
-                    }
-                    ?>
+
+                            <?php
+                            // echo 'Productos: ' . $fila->nombre_corto . ' - Precio' . $fila->PVP . '€';
+                            //botón que en el value le paso el código para arrastrarlo al otro archivo
+                        }
+                        ?>
+                    </div>
+                    <br class="divisor" />
+                    <div id="pie">
+                        <form action="logoff.php" method="POST">
+                            <input type="submit" name="salir" value="Abandonar la sesión ">
+                        </form>
+
+                        <p class='error'>  </p>
+
+                    </div>
                 </div>
-                <br class="divisor" />
-                <div id="pie">
-                    <form action="logoff.php" method="POST">
-                        <input type="submit" name="salir" value="Abandonar la sesión ">
-                    </form>
-
-                    <p class='error'>  </p>
-
-                </div>
-
-
-
 
             </body>
         </html>

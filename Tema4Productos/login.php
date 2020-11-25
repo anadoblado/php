@@ -1,5 +1,6 @@
 
 <?php
+$correcto = true;
 if (isset($_POST['enviar']) && isset($_POST['nombre']) && isset($_POST['pass'])) {
 
     try {
@@ -19,13 +20,14 @@ if (isset($_POST['enviar']) && isset($_POST['nombre']) && isset($_POST['pass']))
             $_SESSION['nombre'] = $_POST['nombre'];
             header("location:productos.php");
         } else {
+            $correcto = false;
             //echo '<span class='."mensaje".'>El usuario no existe</span><br>' ;
             //header("location:login.php");
             ?>
-            <span class="mensaje">El usuario no existe</span>
-            <form action="login.php">
-                <input type="submit" name="volver" value="Volver">
-            </form>
+            <!--            <span class="mensaje">El usuario no existe</span>
+                        <form action="login.php">
+                            <input type="submit" name="volver" value="Volver">
+                        </form>-->
             <?php
         }
     } catch (PDOException $exc) {
@@ -36,7 +38,7 @@ if (isset($_POST['enviar']) && isset($_POST['nombre']) && isset($_POST['pass']))
 //            header("location:productos.php");
 //            //echo $_SESSION['nombre'];
 //        }
-} else {
+} if (!isset($_POST['enviar']) || $correcto == false) {
     ?>
     <html>
         <head>
@@ -49,6 +51,13 @@ if (isset($_POST['enviar']) && isset($_POST['nombre']) && isset($_POST['pass']))
                 <form action="" method="post">
                     <fieldset>
                         <legend id="login">Login</legend>
+                        <?php
+                        if ($correcto == false) {
+                            ?>
+                            <span class="mensaje">El usuario no existe</span>
+                            <?php
+                        }
+                        ?>
                         <div class="campo">
                             <label for='usuario'>Nombre</label><br/>
                             <input id="usuario" type="text" name="nombre" value="" ><br><!-- comment/ -->
