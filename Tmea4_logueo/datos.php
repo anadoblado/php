@@ -1,8 +1,8 @@
 <?php
 session_name();
 session_start();
-echo $_SESSION['nombre'];
-echo $_SESSION['apellidos'];
+//echo $_SESSION['nombre'];
+//echo $_SESSION['apellido'];
 if (!isset($_SESSION['user'])) {
     header("location:index.php");
 }
@@ -21,6 +21,14 @@ if(isset($_POST['salir'])){
     <head>
         <title>Datos</title>
         <link rel="stylesheet" type="text/css" href="myStyle.css" media="screen" />
+         <style>
+            body{
+                background-color: <?php echo $_SESSION['color_fondo']; ?> ;
+                color: <?php echo $_SESSION['color_letra']; ?>;
+                font-family:<?php echo $_SESSION['tipo_letra']; ?> ;
+                font-size: <?php echo $_SESSION['tam_letra']; ?>;
+            }
+        </style>
     </head>
     <body>
         <div>

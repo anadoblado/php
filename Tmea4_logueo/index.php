@@ -6,9 +6,9 @@ if (!isset($_SESSION["intentos"])) {
     //echo "hola";
     $_SESSION["intentos"] = 3;
 }
-if ($_SESSION["intentos"] == 0) {
-    header("location:intentos.php");
-}
+//if ($_SESSION["intentos"] == 0) {
+//    header("location:intentos.php");
+//}
 
 if (isset($_POST['enviar']) && isset($_POST['user']) && isset($_POST['pass'])) {
 
@@ -16,7 +16,6 @@ if (isset($_POST['enviar']) && isset($_POST['user']) && isset($_POST['pass'])) {
         $opciones = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
         $conex = new PDO('mysql:host=localhost; dbname=logueo; charset=UTF8mb4', 'dwes', 'abc123.', $opciones);
         $error = $conex->errorInfo();
-        //comprobar con la mia
        $result = $conex->query("SELECT * FROM perfil_usuario WHERE user='$_POST[user]' and pass='" . md5($_POST["pass"]) . "'");
     
         if ($result->rowCount()) {
@@ -39,9 +38,9 @@ if (isset($_POST['enviar']) && isset($_POST['user']) && isset($_POST['pass'])) {
         } else {
             $incorrecto = true;
             $_SESSION["intentos"]--;
-            echo"restar";
-            if (($_SESSION["intentos"]) == 0)
-                header("location:intentos.php");
+            //echo"restar";
+            if (($_SESSION["intentos"]) == 0) header("location:intentos.php");
+                
         }
     } catch (PDOException $exc) {
         echo $exc->getTraceAsString(); // error de php
@@ -84,6 +83,7 @@ if (isset($_POST['enviar']) && isset($_POST['user']) && isset($_POST['pass'])) {
 
             <?php
         }
+        if (isset($_POST['registrar'])) header("location:registro.php");
         ?>
 
     </body>
