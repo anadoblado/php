@@ -90,6 +90,11 @@ float: right;
 width: 15em;
 background-color: #588;
 }
+.inicio #saludo{
+    float: right;
+    width: 10em;
+    text-align: center;
+}
 .pagproductos #cesta h3 {
 margin-left: 10px;
 margin-right: 10px;

@@ -3,30 +3,39 @@ $incorrecto = false;
 session_start();
 
 if (!isset($_SESSION["intentos"])) {
-    echo "hola";
-    
+    //echo "hola";
     $_SESSION["intentos"] = 3;
 }
 if ($_SESSION["intentos"] == 0) {
     header("location:intentos.php");
 }
 
-if (isset($_POST['enviar']) && isset($_POST['nombre']) && isset($_POST['pass'])) {
+if (isset($_POST['enviar']) && isset($_POST['user']) && isset($_POST['pass'])) {
 
     try {
         $opciones = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
-        $conex = new PDO('mysql:host=localhost; dbname=dwes; charset=UTF8mb4', 'dwes', 'abc123.', $opciones);
+        $conex = new PDO('mysql:host=localhost; dbname=logueo; charset=UTF8mb4', 'dwes', 'abc123.', $opciones);
         $error = $conex->errorInfo();
         //comprobar con la mia
-       $result = $conex->query("SELECT * FROM usuarios WHERE nombre='$_POST[nombre]' and password='" . md5($_POST["pass"]) . "'");
-
-        
-        
+       $result = $conex->query("SELECT * FROM perfil_usuario WHERE user='$_POST[user]' and pass='" . md5($_POST["pass"]) . "'");
+    
         if ($result->rowCount()) {
             session_name();
             session_start();
-            $_SESSION['nombre'] = $_POST['nombre'];
-            header("location:.php");
+            $_SESSION['user'] = $_POST['user'];
+            $_SESSION["intentos"] = 3;
+            while ($fila = $result->fetch(PDO::FETCH_OBJ)) {
+                $_SESSION['nombre'] = $fila->nombre;
+                $_SESSION['apellidos'] = $fila->apellidos;
+                $_SESSION['direccion'] = $fila->direccion;
+                $_SESSION['localidad'] = $fila->localidad;
+                $_SESSION['pass'] = $fila->pass;
+                $_SESSION['color_letra'] = $fila->color_letra;
+                $_SESSION['color_fondo'] = $fila->color_fondo;
+                $_SESSION['tipo_letra'] = $fila->tipo_letra;
+                $_SESSION['tam_letra'] = $fila->tam_letra;
+            }
+            header("location:inicio.php");
         } else {
             $incorrecto = true;
             $_SESSION["intentos"]--;
@@ -59,7 +68,7 @@ if (isset($_POST['enviar']) && isset($_POST['nombre']) && isset($_POST['pass']))
                         <div><span class='error'>	</span></div>
                         <div class='campo'>
                             <label for='usuario' >Usuario:</label><br/>
-                            <input type='text' name='nombre' id='usuario' maxlength="50" /><br/>
+                            <input type='text' name='user' id='usuario' maxlength="50" /><br/>
                         </div>
                         <div class='campo'>
                             <label for='password' >Contraseña:</label><br/>
