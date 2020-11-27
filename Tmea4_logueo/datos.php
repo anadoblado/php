@@ -16,6 +16,9 @@ if(isset($_POST['salir'])){
     session_destroy();
     header("location:index.php");
 }
+if(isset($_POST['volver'])){
+    header("location:inicio.php");
+}
 ?>
 <html>
     <head>
@@ -42,6 +45,7 @@ if(isset($_POST['salir'])){
                 <label>Dirección: <?php echo $_SESSION['direccion']; ?></label><br>
                 <label>Localidad: <?php echo $_SESSION['localidad']; ?></label><br>
                 <input type="submit" name="salir" value="Salir">
+                <input type="submit" name="volver" value="Volver">
             </form>
         </div>
     </body>

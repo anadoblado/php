@@ -9,7 +9,7 @@ if (!isset($_SESSION['user'])) {
 if ( $_SESSION['intentos'] == 0){
     header("location:intentos.php");
 }
-echo 'Bienvenido '.$_SESSION['nombre'];
+//echo 'Bienvenido '.$_SESSION['nombre'];
 if(isset($_POST['salir'])){
     setcookie('PHPSESSID', "", time()-3600, "/");
     session_unset();
