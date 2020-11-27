@@ -6,6 +6,9 @@ if (!isset($_SESSION["intentos"])) {
     //echo "hola";
     $_SESSION["intentos"] = 3;
 }
+if (isset($_SESSION['user'])){
+    header("location:inicio.php");
+}
 //if ($_SESSION["intentos"] == 0) {
 //    header("location:intentos.php");
 //}
@@ -19,7 +22,7 @@ if (isset($_POST['enviar']) && isset($_POST['user']) && isset($_POST['pass'])) {
        $result = $conex->query("SELECT * FROM perfil_usuario WHERE user='$_POST[user]' and pass='" . md5($_POST["pass"]) . "'");
     
         if ($result->rowCount()) {
-            session_name();
+            
             session_start();
             $_SESSION['user'] = $_POST['user'];
             $_SESSION["intentos"] = 3;

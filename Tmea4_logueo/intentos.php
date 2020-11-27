@@ -4,6 +4,9 @@ session_start();
 if (!isset($_SESSION['intentos'])) {
     header("location:index.php");
 }
+if (isset($_SESSION['user'])){
+    header("location:inicio.php");
+}
 
 ?>
 <html>

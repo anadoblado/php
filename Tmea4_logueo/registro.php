@@ -7,7 +7,10 @@ session_start();
 if ($_SESSION['intentos'] == 0) {
     header("location:intentos.php");
 }
-
+if (isset($_SESSION['user'])){
+    header("location:inicio.php");
+}
+$userExiste = false;
 if (isset($_POST['enviar']) && preg_match("/^[a-z]{1,50}$/i", $_POST["nombre"]) && preg_match("/^[a-z]{1,50}$/i", $_POST["apellido"]) && preg_match("/^[a-z]{1,50}$/i", $_POST["direccion"]) && preg_match("/^[a-z]{1,50}$/i", $_POST["localidad"]) && preg_match("/^[a-z0-9-]{1,}@[a-z0-9-]{1,}(\.[a-z]{2,})$/i", $_POST["user"]) && preg_match("/^[0-9a-z]{1,50}$/i", $_POST["pass"]) && !empty($_POST['color_letra']) && !empty($_POST['color_fondo']) && !empty($_POST['tipo_letra']) && !empty($_POST['tam_letra'])) {
 //    echo $_POST['nombre'];
 //    echo $_POST['apellido'];
@@ -15,6 +18,10 @@ if (isset($_POST['enviar']) && preg_match("/^[a-z]{1,50}$/i", $_POST["nombre"]) 
     $opciones = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
     $conex = new PDO('mysql:host=localhost; dbname=logueo; charset=UTF8mb4', 'dwes', 'abc123.', $opciones);
     $error = $conex->errorInfo();
+    $result = $conex->query("SELECT * FROM perfil_usuario WHERE  user='$_POST[user]'");
+    if($result->rowCount()){
+        $userExiste =  true;
+    }else{
     //$result = $conex->query("SELECT * FROM perfil_usuario WHERE user='$_POST[user]' and pass='" . md5($_POST["pass"]) . "'");
     $result = $conex->prepare("INSERT into perfil_usuario (nombre,apellidos,direccion,localidad,user,pass,color_letra,color_fondo,tipo_letra,tam_letra) values (?, ?, ?,?, ?, ?,?, ?, ?,?);");
     $encriptada = md5($_POST["pass"]);
@@ -52,14 +59,17 @@ if (isset($_POST['enviar']) && preg_match("/^[a-z]{1,50}$/i", $_POST["nombre"]) 
     $_SESSION['color_fondo'] = $_POST['color_fondo'];
     $_SESSION['tipo_letra'] = $_POST['tipo_letra'];
     $_SESSION['tam_letra'] = $_POST['tam_letra'];
-    header("location:inicio.php");
-} else {
+    header("location:inicio.php");    
+    }
+    
+} if(!isset($_POST['enviar']) || isset($_POST['enviar']) || $userExiste == true) {
     ?>
     <html>
         <head>
             <title>Registro</title>
         </head>
         <body>
+ 
             <form action="" method="post">
                 Nombre:<input type="text" name="nombre" <?php
     if (!empty($_POST['nombre'])) {
@@ -118,9 +128,14 @@ if (isset($_POST['enviar']) && preg_match("/^[a-z]{1,50}$/i", $_POST["nombre"]) 
                                  <?php
                                  if (isset($_POST['enviar'])) {
                                      ///^[_a-z0-9-]+(\.[_a-z0-9-]+)@[a-z0-9-]+(\.[a-z0-9-]+)(\.[a-z]{2,})$/i
-                                     if (!preg_match("/^[a-z0-9-]{1,}@[a-z0-9-]{1,}(\.[a-z]{2,})$/i", $_POST["email"])) {
+                                     if($userExiste == true){
+                                          echo "<span style='color:red'>Este correo ya existe</span>";
+                                     }
+                                     
+                                     if (!preg_match("/^[a-z0-9-]{1,}@[a-z0-9-]{1,}(\.[a-z]{2,})$/i", $_POST["user"])) {
                                          echo "<span style='color:red'>No puede estar vacio y debe tener el formato a@dd. </span>";
                                      }
+                                     
                                  }
                                  ?><br>
                 Contraseña:<input type="password" name="pass" <?php
