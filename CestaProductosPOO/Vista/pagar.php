@@ -1,9 +1,9 @@
 <?php
-session_name();
+
 session_start();
 
 if (!isset($_SESSION['nombre'])) {
-    header("location:login.php");
+    header("location:index.php");
 } else {
 
     //echo $_SESSION['nombre'];
@@ -16,7 +16,7 @@ if (!isset($_SESSION['nombre'])) {
         </head>
         <body class="pagcesta">
             <span class="mensaje">Compra realizada con éxito</span>
-            <form action="productos.php">
+            <form action="vistaCesta.php">
                 <input type="submit" name="volver" value="Volver a lista de productos">
             </form>
         </body>

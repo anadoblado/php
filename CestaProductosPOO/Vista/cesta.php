@@ -1,5 +1,5 @@
 <?php
-session_name();
+require_once '../Controlador/controladorProducto.php';
 session_start();
 
 if(!isset($_SESSION['nombre'])){
@@ -24,15 +24,12 @@ if(!isset($_SESSION['nombre'])){
             <div id="pagproductos">
                 <?php
                     if(isset($_SESSION['cesta'])){
-                         $productoPrecios = 0;
                          $total = 0;
-                        foreach ($_SESSION['cesta'] as $key => $value) {
-                            echo '<label>Producto: '.$value['nombre'].'----- Precio: '. $value['precio'].' € ----- Cantidad: '. $value['cantidad']. ' ud</label><br>';
-                            $productoPrecios = $value['cantidad']*$value['precio'];
-                            $preciosAPagar = array('precios' => $productoPrecios);
-                            foreach ($preciosAPagar as $val) {
-                                  $total += $val;
-                                   }
+                        foreach ($_SESSION['cesta'] as $value) {
+                            echo '<label>Producto: '.$value->nombre_corto.'----- Precio: '. $value->PVP.' € ----- </label><br>';
+        
+                                $total += $value->PVP;
+                                   
                              }
                     }
                             ?>

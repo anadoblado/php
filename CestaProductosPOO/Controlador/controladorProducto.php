@@ -1,14 +1,13 @@
 <?php
-
-require_once './Modelo/conexion.php';
-require_once './Modelo/Producto.php';
+require_once '../Modelo/conexion.php';
+require_once '../Modelo/Producto.php';
 
 class controladorPruducto {
 
     public static function insertar(Producto $p) {
         try {
             $conex = new Conexion();
-            $conex->exec("INSERT INTO productos (codigo,nombre,precio) VALUES ('$p->codigo','$p->nombre','$p->precio')");
+            $conex->exec("INSERT INTO producto (codigo,nombre,precio) VALUES ('$p->codigo','$p->nombre','$p->precio')");
             // si queremos que devuelva algo return;
         } catch (PDOException $ex) {
             echo '<a href=index.php>Ir a inicio</a>';
@@ -22,10 +21,10 @@ class controladorPruducto {
     public static function buscarProducto($cod) {
         try {
             $conex = new Conexion();
-            $result = $conex->query("SELECT * FROM productos WHERE codigo=$cod");
+            $result = $conex->query("SELECT * FROM producto WHERE cod='$cod'");
             if ($result->rowCount()) {
                 $registro = $result->fetchObject();
-                $p = new Producto($registro->codigo, $registro->nombre, $registro->precio);
+                $p = new Producto($registro->cod, $registro->nombre_corto, $registro->descripcion, $registro->PVP);
                 // como es un objeto de la misma clase se puede hacer así
                 return $p;
             } else
@@ -36,28 +35,25 @@ class controladorPruducto {
         }
         unset($conex);
     }
+    
+    public static function addCesta($cod){
+        $p = self::buscarProducto($cod);
+        $productosCesta [] = clone($p); 
+        return $productosCesta;
+    }
 
     public static function recuperarTodos() {
         try {
             $conex = new Conexion();
-            $result = $conex->query("SELECT * FROM productos");
+            $result = $conex->query("SELECT * FROM producto");
             if ($result->rowCount()) {
                 //creo un producto
-                $p = new Producto();
+                //$p = new Producto();
                 while ($row = $result->fetchObject()) {
-                    // le asigono esos valores y los meto en el array
-                    $p->nuevoProducto($row->codigo, $row->nombre, $row->precio);
-
-                    // otra forma de crearlo, así hace 3 objetos en distintas direcciones de memoria, no haec falta crear el new Producto() fuera
-                    //$p= new self($row->codigo, $row->nombre, $row->precio);
-                    // con los objetos se asigna la misma dirección de memoria si sólo ponemos $productos[]=$p;
-                    // por eso usamos clone();
-                    $productos[] = clone($p);
-                    $p = new Producto($row->codigo, $row->nombre, $row->precio);
+                    $p = new Producto($row->cod, $row->nombre_corto, $row->descripcion, $row->PVP);
+                    $productos[] = clone($p);                   
                 }
-                //$registro=$result->fetchObject();
-                // como es un objeto de la misma clase se puede hacer así
-                //return new self($registro->codigo, $registro->nombre, $registro->precio);
+
                 return $productos;
             } else
                 return false;
