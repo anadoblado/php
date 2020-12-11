@@ -1,14 +1,15 @@
 <?php
 
 if(isset($_POST['subir'])){
-    /*
-    echo 'Nombre original: '.$_FILES['foto']['name'].'<br>';
-    echo 'Nombre temporal: '.$_FILES['foto']['tmp_name'].'<br>';
-    echo 'Tamaño: '.$_FILES['foto']['size'].'<br>';
-    echo 'Tipo: '.$_FILES['foto']['type'].'<br>';
-    echo 'Error: '.$_FILES['foto']['error'].'<br>';
-     * 
-     Siempre accedemos al nombre temporal que es el que se copia*/
+    
+//    echo 'Nombre original: '.$_FILES['foto']['name'].'<br>';
+//    echo 'Nombre temporal: '.$_FILES['foto']['tmp_name'].'<br>';
+//    echo 'Tamaño: '.$_FILES['foto']['size'].'<br>';
+//    echo 'Tipo: '.$_FILES['foto']['type'].'<br>';
+//    echo 'Error: '.$_FILES['foto']['error'].'<br>';
+      
+    // Siempre accedemos al nombre temporal que es el que se copia*/
+    
     if(is_uploaded_file($_FILES['foto']['tmp_name'])){
         // para hacer el nombre único le vamos a concatenar el tiempo UNY
         $fich_unic=$_FILES['foto']['name']."-".time();
@@ -37,7 +38,7 @@ if(isset($_POST['mostrar'])){
 ?>
 
 <form action="" method="post" enctype="multipart/form-data">
-    Foto: <input type="file" name="foto"><br><!-- comment -->
+    Foto: <input type="file" name="foto">
     <input type="submit" name="subir" value="Subir">
     <input type="submit" name="mostrar" value="Mostrar">
 </form>

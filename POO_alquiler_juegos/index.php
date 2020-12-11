@@ -1,51 +1,56 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<?php
+require_once './Controlador/controladorJuego.php';
+
+try {
+$conex = new Conexion();
+?>
 <html>
     <head>
         <meta charset="UTF-8">
         <title>Index</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
-
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </head>
     <body>
         <?php
-        // put your code here
+        
         ?>
         <div class="container">
             <h1>Bienvenid@ a nuestro sistema</h1>
             <div class="row">
                 <div class="col">
                     <table class="table">
-                        <thead>
+                        <thead class="thead-dark">
                             <tr>
-                                <th>Producto</th>
-                                <th>Cantidad</th>
+                                <th>Portada</th>
+                                <th>Nombre juego</th>
+                                <th>Nombre consola</th>
+                                <th>Año</th>
                                 <th>Precio</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Ratón</td>
-                                <td>15</td>
-                                <td>100</td>
-                            </tr>
-                            <tr>
-                                <td>Teclado</td>
-                                <td>34</td>
-                                <td>340</td>
-                            </tr>
-                            <tr>
-                                <td>Pantalla</td>
-                                <td>10</td>
-                                <td>400</td>
-                            </tr>
+                            
+                                <?php 
+                                  $juegos = controladorProducto::recuperarTodos();
+                                  foreach ($juegos as $value) {
+                                      echo '<tr>';
+                                     ?>
+                            <td><img src="<?php echo $value->imagen; ?>" width="50px" height="70px"/></td>
+                            <td><?php echo $value->nombre_juego; ?></td>
+                            <td><?php echo $value->nombre_consola; ?></td>
+                            <td><?php echo $value->anno; ?></td><!-- comment -->
+                            <td><?php echo $value->precio; ?></td>
+                                         <?php
+                                      echo '</tr>';
+                                      
+                                  }
+                                ?>
+                               
+                           
                         </tbody>
                     </table>
                 </div>
@@ -53,3 +58,9 @@ and open the template in the editor.
             </div>
     </body>
 </html>
+<?php
+} catch (PDOException $exc) {
+echo $exc->getTraceAsString(); // error de php
+echo 'Error:' . $exc->getMessage(); // error del servidor de bd
+}
+?>
