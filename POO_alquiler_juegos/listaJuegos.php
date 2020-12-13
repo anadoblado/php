@@ -1,34 +1,37 @@
 <?php
 require_once './Controlador/controladorJuego.php';
 require_once './Controlador/controladorCliente.php';
-
-if(isset($_POST['enviar']) && isset($_POST['dni']) && isset($_POST['pass'])){
-    $cliente = controladorCliente::buscarCliente($_POST['dni'],$_POST['pass'], $errores);
-    //compruebo que hay coincidencias y que existe el usuario en la bbdd
-    if(empty($errores) && $cliente != null){
-         session_start();
-         //echo $cliente->tipo;
-//         $_SESSION['nombre'] = $cliente->nombre;
-//         $_SESSION['dni'] = $cliente->dni;
-//         if($cliente->tipo = "admin"){
-//             header("location:vistaAdministrador.php");
-//         }
-//          header("location:vistaCliente.php");
-          if($cliente->nombre == "Admin"){
-              $_SESSION['nombre'] = $cliente->nombre;
-              $_SESSION['dni'] = $cliente->dni;
-              header("location:vistaAdministrador.php");
-         }else{
-              $_SESSION['nombre'] = $cliente->nombre;
-              $_SESSION['dni'] = $cliente->dni;
-              header("location:vistaCliente.php");
-         }
-
+require_once './Controlador/controladorAlquiler.php';
+session_start();
+//echo 'vista cliente';
+if(!isset($_SESSION['nombre'])){
+    header("Location:index.php");
     }
-    
+
+if (isset($_POST['cerrar'])){
+    if(!isset($_SESSION['nombre'])){
+    header("Location:index.php");
+    }else{
+        setcookie(session_name(), "", time()-3600, "/");
+        session_unset();
+        session_destroy();
+        header("Location:index.php");  
+    }
 }
 
+if (isset($_POST['alquilar'])){
+    //$_SESSION['alquilo'][] = controladorJuego::buscarJuego($_POST['alquilar']);
+    $fechaA = date("Y-n-d");
+//    $fecha= date_create($fechaA);  
+//    $f=date_format($fecha, "Y-n-d");
+//echo $f;    
+//echo $fechaA;
+    $fechaD = date("Y-n-d");
+    controladorAlquiler::insertar(null,$_POST['alquilar'], $_SESSION['dni'], $fechaA, null);
+    controladorAlquiler::cambiarAlquilerSI($_POST['alquilar']);
+}
 ?>
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -43,14 +46,27 @@ if(isset($_POST['enviar']) && isset($_POST['dni']) && isset($_POST['pass'])){
         <?php
         
         ?>
-        <div class="container">
+        <div class="container mt-3">
             <h1>Juegos Comares</h1>
+            <div class="py-3 ml-3">
+                <?php echo "Hola ".$_SESSION['nombre'];
+ 
+                 ?>
+            </div>
             <form action="" method="post">
-                <input type="text" name="dni" placeholder="Dni">
-                <input type="text" name="pass" placeholder="Contraseña">
-                <button type="submit" name="enviar" class="btn btn-light">Loguear</button>
-<!--                <input type="submit" value="Loguear" name="enviar">-->
+                <input type="submit" name="cerrar" value="Cerrar sesión">
             </form>
+            <a href="listaJuegos.php" >Listado de Juegos</a> -- <a href="vistaJuegosAlquilados.php" >Listado de Juegos Alquilados</a> -- <a href="" >Listado de Juegos NO Alquilados</a> -- <a href="misJuegosAlquilados.php" >Mis Juegos Alquilados</a>
+            -- 
+            <?php
+            if($_SESSION['nombre'] = "Admin"){
+                ?>
+            <a href="nuevoJuego.php">Añadir juego</a> -- <a href="administrarJuegos.php">Administrar juegos</a>
+                    <?php
+            }
+            ?>
+            
+
             <div class="row">
                 <div class="col">
                     <table class="table">
@@ -70,17 +86,20 @@ if(isset($_POST['enviar']) && isset($_POST['dni']) && isset($_POST['pass'])){
                                   foreach ($juegos as $value) {
                                       echo '<tr>';
                                      ?>
-                            <td><img src="<?php echo $value->imagen; ?>" width="50px" height="70px"/></td>
+                        <td><a href="mostrar.php?codigo=<?php echo $value->codigo; ?>"><img src="<?php echo $value->imagen; ?>" width="50px" height="70px"/></a></td>
+                           
                             <td><?php echo $value->nombre_juego; ?></td>
                             <td><?php echo $value->nombre_consola; ?></td>
                             <td><?php echo $value->anno; ?></td><!-- comment -->
                             <td><?php echo $value->precio; ?></td>
+                            
                                          <?php
                                       echo '</tr>';
                                       
                                   }
+                                  
                                 ?>
-                               
+                           
                            
                         </tbody>
                     </table>
@@ -89,6 +108,4 @@ if(isset($_POST['enviar']) && isset($_POST['dni']) && isset($_POST['pass'])){
             </div>
     </body>
 </html>
-<?php
 
-?>

@@ -9,8 +9,9 @@ class Juegos {
     private $precio;
     private $alquilado;
     private $imagen;
+    private $descripcion;
 
-    public function __construct($codigo = "", $nombre_juego = "", $nombre_consola = "", $anno = "",$precio="", $alquilado = "", $imagen = "") {
+    public function __construct($codigo = "", $nombre_juego = "", $nombre_consola = "", $anno = "",$precio="", $alquilado = "", $imagen = "", $descripcion="") {
         $this->codigo = $codigo;
         $this->nombre_juego = $nombre_juego;
         $this->nombre_consola = $nombre_consola;
@@ -18,9 +19,10 @@ class Juegos {
         $this->precio = $precio;
         $this->alquilado = $alquilado;
         $this->imagen = $imagen;
+        $this->descripcion = $descripcion;
     }
 
-    public function nuevoJuego($codigo, $nombre_juego, $nombre_consola, $anno, $precio, $alquilado, $imagen) {
+    public function nuevoJuego($codigo, $nombre_juego, $nombre_consola, $anno, $precio, $alquilado, $imagen, $descripcion) {
         $this->codigo = $codigo;
         $this->nombre_juego = $nombre_juego;
         $this->nombre_consola = $nombre_consola;
@@ -28,6 +30,7 @@ class Juegos {
         $this->precio = $precio;
         $this->alquilado = $alquilado;
         $this->imagen = $imagen;
+        $this->descripcion = $descripcion;
     }
     
     public function __get($name) {
