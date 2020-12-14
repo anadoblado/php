@@ -19,17 +19,6 @@ if (isset($_POST['cerrar'])){
     }
 }
 
-if (isset($_POST['alquilar'])){
-    //$_SESSION['alquilo'][] = controladorJuego::buscarJuego($_POST['alquilar']);
-    $fechaA = date("Y-n-d");
-//    $fecha= date_create($fechaA);  
-//    $f=date_format($fecha, "Y-n-d");
-//echo $f;    
-//echo $fechaA;
-    $fechaD = date("Y-n-d");
-    controladorAlquiler::insertar(null,$_POST['alquilar'], $_SESSION['dni'], $fechaA, null);
-    controladorAlquiler::cambiarAlquilerSI($_POST['alquilar']);
-}
 ?>
 
 <html>
@@ -54,8 +43,19 @@ if (isset($_POST['alquilar'])){
                  ?>
             </div>
             <form action="" method="post">
-                <input type="submit" name="cerrar" value="Cerrar sesión">
+                <button type="submit" name="cerrar" class="btn btn-dark">Cerrar sesión</button>
             </form>
+                <?php
+            if($_SESSION['nombre'] == "Admin"){
+                ?>
+           <a href="vistaAdministrador.php">Volver</a>
+                    <?php
+            }else{
+                ?>
+           <a href="vistaCliente.php">Volver</a>
+                    <?php
+            }
+            ?> ---
             <a href="listaJuegos.php" >Listado de Juegos</a> -- <a href="vistaJuegosAlquilados.php" >Listado de Juegos Alquilados</a> -- <a href="" >Listado de Juegos NO Alquilados</a> -- <a href="misJuegosAlquilados.php" >Mis Juegos Alquilados</a>
             -- 
             <?php
@@ -65,6 +65,7 @@ if (isset($_POST['alquilar'])){
                     <?php
             }
             ?>
+            
             
 
             <div class="row">

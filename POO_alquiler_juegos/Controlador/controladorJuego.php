@@ -63,11 +63,12 @@ class controladorJuego{
     public function recuperarAlquiladosUsuario($dni) {
         try {
             $conex = new Conexion();
-            $result = $conex->query("SELECT * FROM juegos, alquiler where Cod_juego=Codigo AND DNI_cliente='$dni' AND Alguilado='SI'");              
+            $result = $conex->query("SELECT * FROM juegos, alquiler WHERE Fecha_devol='null' AND Cod_juego=Codigo AND Alguilado='SI' AND DNI_cliente='$dni'");
+              
             return $result;
            
         } catch (PDOException $ex) {
-            echo '<a href=index.php>Ir a inicio</a>';
+            echo '<a href=index.php>---Ir a inicio---</a>';
             die('error con la base de datos' . $ex->getMessage());
         }
         unset($conex);

@@ -4,13 +4,61 @@ require_once './Controlador/controladorJuego.php';
 require_once './Controlador/controladorCliente.php';
 require_once './Controlador/controladorAlquiler.php';
 session_start();
+
 if(!isset($_SESSION['nombre'])){
     header("Location:index.php");
     }
 
 if (isset($_POST['devolver'])){
     controladorAlquiler::cambiarAlquilerNO($_POST['devolver']);
-    controladorAlquiler::eliminarAlquiler($_POST['devolver']);
+    //controladorAlquiler::eliminarAlquiler($_POST['devolver']);
+    $fechaD = date("Y-n-d");
+    controladorAlquiler::modificarAlquiler($_POST['devolver'], $fechaD);
+    
+    $fechas = controladorAlquiler::calculoFechas($_POST['devolver'], $_POST['id']);
+    //echo $_POST['id'];
+
+        while($row = $fechas->fetchObject()){
+            $fecha1= $row->Fecha_alquiler;
+            $fecha2 = $row->Fecha_devol;  
+//            echo "Fecha Alquiler: ".$row->Fecha_alquiler;
+//            echo "<br>";
+//            echo "Fecha Devolución: ".$row->Fecha_devol;
+//            echo "<br>";
+            $fechaActual = date_create($fecha1);
+            $fechadevol = date_create($fecha2);
+          $dias = date_diff($fechaActual, $fechadevol);
+          $diferencia = '%a';
+         // echo $dias->format($diferencia. " Son los días que han pasado");
+          //echo "<br>";
+          $df = $dias->format($diferencia);
+          //echo $df." días con el juego"; 
+    }
+    
+    $pago = controladorAlquiler:: pagoCliente($_POST['devolver'], $_POST['id']);
+    
+    while($row = $pago->fetchObject()){
+        $pagar = $row->Precio;
+    
+      if($diferencia > 7){
+          
+      $total = $pagar + ($diferencia - 7);
+      ?>
+<div class="alert alert-danger">
+    Has tenido el juego <strong><?php echo $df; ?></strong> Tienes que pagar <strong><?php echo $total; ?>€ </strong> .
+  </div>
+          <?php
+      
+      }else{
+          ?>
+      }
+      <div class="alert alert-success">
+    Has tenido el juego <strong><?php echo $df; ?></strong> Tienes que pagar <strong><?php echo $pagar; ?>€ </strong> .
+  </div>
+      <?php
+      //echo "Tienes que pagar: ".$pagar;
+      }
+    }
 }
 
 ?>
@@ -45,7 +93,7 @@ if (isset($_POST['devolver'])){
             </div>
             <div class="container">
                  <?php
-            if($_SESSION['nombre'] = "Admin"){
+            if($_SESSION['nombre'] == "Admin"){
                 ?>
            <a href="vistaAdministrador.php">Volver</a>
                     <?php
@@ -53,7 +101,11 @@ if (isset($_POST['devolver'])){
                 ?>
            <a href="vistaCliente.php">Volver</a>
                     <?php
+                    
             }
+            
+                   $juegos = controladorJuego::recuperarAlquiladosUsuario($_SESSION['dni']);
+                   if($juegos->rowCount() > 0){
             ?>
                 <h4 style="text-align: start">Juegos Comares</h4>
                 <table class="table table-hover">
@@ -70,7 +122,6 @@ if (isset($_POST['devolver'])){
 
                     <?php
 
-                           $juegos = controladorJuego::recuperarAlquiladosUsuario($_SESSION['dni']);
                             while($row = $juegos->fetchObject()){      
                             ?>
                             <tr>
@@ -80,12 +131,20 @@ if (isset($_POST['devolver'])){
                                 <td> <?php echo $row->Anno ?> </td>
                                 <td> <?php echo $row->Precio ?></td>
                                 <td> <form action="" method="post">
-                                        <button type="submit" class="btn btn-outline-danger" name="devolver" value="<?php echo $row->Codigo?>">Devolver</button> 
+                                        <button type="submit" class="btn btn-outline-danger" name="devolver" value="<?php echo $row->Codigo?>">Devolver</button>
+                                        <input type="hidden" name="id" value="<?php echo $row->id ?>">
                                     </form></td>
                             </tr>
                             
                             <?php
                             }
+                   }else{
+                       ?>
+                       <div class="alert alert-info">
+    <strong>Info!</strong> No hay juegos en la lista.
+  </div>
+                            <?php
+                   }
 
                         
                    ?>

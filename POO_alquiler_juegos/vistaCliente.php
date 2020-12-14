@@ -56,7 +56,7 @@ if (isset($_POST['alquilar'])){
             <form action="" method="post">
                  <button type="submit" name="cerrar" class="btn btn-dark">Cerrar sesión</button>
             </form>
-            <a href="listaJuegos.php" >Listado de Juegos</a> -- <a href="vistaJuegosAlquilados.php" >Listado de Juegos Alquilados</a> -- <a href="juegosNoAlquilados.php" >Listado de Juegos NO Alquilados</a> -- <a href="misJuegosAlquilados.php" >Mis Juegos Alquilados</a>
+            <a href="vistaCliente.php" >Listado de Juegos</a> -- <a href="vistaJuegosAlquilados.php" >Listado de Juegos Alquilados</a> -- <a href="juegosNoAlquilados.php" >Listado de Juegos NO Alquilados</a> -- <a href="misJuegosAlquilados.php" >Mis Juegos Alquilados</a>
 
             <div class="row">
                 <div class="col">
@@ -74,11 +74,12 @@ if (isset($_POST['alquilar'])){
                         <tbody>
                             
                                 <?php 
-                                  $juegos = controladorJuego::recuperarNoAlquilados();
+                                  $juegos = controladorJuego::recuperarTodos();
+                                  
                                   foreach ($juegos as $value) {
                                       echo '<tr>';
                                      ?>
-                        <td><a href="mostrar.php?codigo=<?php echo $value->codigo; ?>"><img src="<?php echo $value->imagen; ?>" width="50px" height="70px"/></a></td>
+                        <td><a href="mostrar.php?codigo=<?php echo $value->codigo; ?>"><img src="<?php echo $value->imagen; ?>" width="50px" height="70px"  <?php if($value->alquilado == "SI") echo "style='filter:grayscale(100%);'";?>/></a></td>
                            
                             <td><?php echo $value->nombre_juego; ?></td>
                             <td><?php echo $value->nombre_consola; ?></td>
@@ -86,8 +87,8 @@ if (isset($_POST['alquilar'])){
                             <td><?php echo $value->precio; ?></td>
                             
                             <form action="" method="post">
-                            <td><button name="alquilar"  class="btn btn-outline-dark" value="<?php echo $value->codigo ?>"
-                                        <?php if($value->alquilado = "SI") echo 'diseabled';?>>Alquilar</button></td>    
+                            <td><button name="alquilar"  class="btn btn-info" value="<?php echo $value->codigo ?>"
+                                        <?php if($value->alquilado == "SI") echo 'disabled';?>>Alquilar</button></td>    
                             </form>
                             
                                          <?php

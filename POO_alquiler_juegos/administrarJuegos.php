@@ -2,6 +2,7 @@
 require_once './Controlador/controladorJuego.php';
 require_once './Controlador/controladorCliente.php';
 require_once './Controlador/controladorAlquiler.php';
+
 session_start();
 if(!isset($_SESSION['nombre'])){
     header("Location:index.php");

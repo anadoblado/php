@@ -43,19 +43,32 @@ if (isset($_POST['cerrar'])){
  
                  ?>
             </div>
+            <?php
+                if($_SESSION['nombre'] == "Admin"){
+            ?>
             
-            <a href="listaJuegos.php" >Listado de Juegos Alquilados</a> -- <a href="vistaJuegosAlquilados.php" >Listado de Juegos Alquilados</a> -- <a href="juegosNoAlquilados.php" >Listado de Juegos NO Alquilados</a> -- <a href="misJuegosAlquilados.php" >Mis Juegos Alquilados</a>
+            <a href="vistaAdministrador.php" >Listado de Juegos</a> --
+             <?php
+            }else{
+                ?>
+           <a href="vistaCliente.php">Listado de Juegos</a>---
+                    <?php
+            }
+             ?>
+            <a href="juegosNoAlquilados.php" >Listado de Juegos NO Alquilados</a> -- <a href="misJuegosAlquilados.php" >Mis Juegos Alquilados</a>
               
               <?php
-            if($_SESSION['nombre'] = "Admin"){
+            if($_SESSION['nombre'] == "Admin"){
                 ?>
            <a href="vistaAdministrador.php">Volver</a>
                     <?php
             }else{
                 ?>
            <a href="vistaCliente.php">Volver</a>
-                    <?php
+                    <?php       
             }
+             $juegos = controladorAlquiler::recuperarTodosConCliente();
+                     if($juegos->rowCount() > 0){
             ?>
             <div class="row">
                 <div class="col">
@@ -73,7 +86,7 @@ if (isset($_POST['cerrar'])){
                         <tbody>
                             
                                 <?php 
-                                  $juegos = controladorAlquiler::recuperarTodosConCliente();
+                                 
                                  while($registro = $juegos->fetchObject()){ 
                                       
                                      ?>
@@ -88,6 +101,13 @@ if (isset($_POST['cerrar'])){
                               <?php
                                       echo '</tr>';
                                  }
+                     }else{
+                         ?>
+                             <div class="alert alert-info">
+                                 <strong>Info!</strong> No hay juegos en la lista.
+                            </div>
+                             <?php
+                     }
                                  
                                   
                                 ?>

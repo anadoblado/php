@@ -41,7 +41,7 @@ if (isset($_POST['alquilar'])){
                     <p><strong>Precio:</strong><?php echo $juego->precio;?></p><!-- comment -->
                     <p><strong>Descripción:</strong><?php echo $juego->descripcion;?></p>
                     <form action="" method="post">
-                        <button type="submit" name="alquilar" value="<?php echo $juego->codigo;?>">Aqluilar</button>
+                        <button type="submit" name="alquilar" class="btn btn-info" value="<?php echo $juego->codigo;?>  <?php if($value->alquilado == "SI") echo 'disabled';?>">Aqluilar</button>
                     </form>
                 </div>
                 <div class="col-sm-4">

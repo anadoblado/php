@@ -37,25 +37,29 @@ if (isset($_POST['cerrar'])){
         
         ?>
         <div class="container">
-            <h1>Lista de juegos Alquilados</h1>
+            <h1>Lista de juegos NO Alquilados</h1>
             <div class="py-3 ml-3">
                 <?php echo "Hola ".$_SESSION['nombre'];
  
                  ?>
             </div>
             
-            <a href="listaJuegos.php" >Listado de Juegos</a> -- <a href="vistaJuegosAlquilados.php" >Listado de Juegos Alquilados</a> -- <a href="juegosNoAlquilados.php" >Listado de Juegos NO Alquilados</a> -- <a href="misJuegosAlquilados.php" >Mis Juegos Alquilados</a>
-              <?php
-            if($_SESSION['nombre'] = "Admin"){
-                ?>
-           <a href="vistaAdministrador.php">Volver</a>
-                    <?php
+             <?php
+                if($_SESSION['nombre'] == "Admin"){
+            ?>
+            
+            <a href="vistaAdministrador.php" >Listado de Juegos</a> --
+             <?php
             }else{
                 ?>
-           <a href="vistaCliente.php">Volver</a>
+           <a href="vistaCliente.php">Listado de Juegos</a>---
                     <?php
             }
-            ?>
+             ?> <a href="vistaJuegosAlquilados.php" >Listado de Juegos Alquilados</a> -- <a href="juegosNoAlquilados.php" >Listado de Juegos NO Alquilados</a> -- <a href="misJuegosAlquilados.php" >Mis Juegos Alquilados</a>
+              <?php
+                $juegos = controladorJuego::recuperarNoAlquilados();
+                if ($juegos != null){
+              ?>
             <div class="row">
                 <div class="col">
                     <table class="table">
@@ -71,7 +75,7 @@ if (isset($_POST['cerrar'])){
                         <tbody>
                             
                                 <?php 
-                                  $juegos = controladorJuego::recuperarNoAlquilados();
+                                
                                  foreach ($juegos as $value) {
                                       echo '<tr>';
                                      ?>
@@ -86,6 +90,13 @@ if (isset($_POST['cerrar'])){
                                       echo '</tr>';
                                       
                                   }
+                }else{
+                    ?>
+                            <div class="alert alert-info">
+                                 <strong>Info!</strong> No hay juegos en la lista.
+                            </div>
+                        <?php
+                }
                                   
                                 ?>
                            
