@@ -4,6 +4,9 @@ require_once './Modelo/conexion.php';
 
 class controladorJuego{
     
+    /*
+     * Método para insertar un juego nuevo en la bbdd
+     */
     public static function insertar(Juegos $j){
          try {
             $conex = new Conexion();
@@ -18,6 +21,9 @@ class controladorJuego{
         unset($conex);
     }
     
+    /*
+     * Método que recibe el código y busca el juego
+     */
     public static function buscarJuego($codigo) {
         try {
             $conex = new Conexion();
@@ -37,6 +43,9 @@ class controladorJuego{
         unset($conex);
     }
     
+    /*
+     * Método que saca todos los juegos de la bbdd y devuelve un array de juegos
+     */
     public static function recuperarTodos() {
         try {
             $conex = new Conexion();
@@ -60,6 +69,9 @@ class controladorJuego{
         unset($conex);
     }
     
+    /*
+     * Método que recupera los juegos alquilados con el usuario que los tiene alquilados
+     */
     public function recuperarAlquiladosUsuario($dni) {
         try {
             $conex = new Conexion();
@@ -74,6 +86,9 @@ class controladorJuego{
         unset($conex);
       }
 
+      /*
+       * Método que recupera los juegos NO alquilados
+       */
       public static function recuperarNoAlquilados() {
         try {
             $conex = new Conexion();
@@ -96,6 +111,9 @@ class controladorJuego{
         unset($conex);
       }
       
+      /*
+       * Método que recibe el Código del juego, y lo elimina de la bbdd
+       */
       public function eliminarJuego($codigo) {
         try {
             $conex = new Conexion();
@@ -111,6 +129,9 @@ class controladorJuego{
         unset($conex);
     }
 
+    /*
+     * Método que recibe un objeto de tipo juego y lo modifica
+     */
     public function modificarJuego(Juegos $juego) {
         try {
             $conex = new Conexion();

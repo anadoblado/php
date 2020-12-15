@@ -4,6 +4,11 @@ require_once './Modelo/conexion.php';
 require_once './Modelo/Cliente.php';
 
 class controladorCliente{
+    /*
+     * Método para insertar un Cliente nuevo en la bbdd
+     * 
+     *
+     */
     public static function insertar(Cliente $c){
          try {
             $conex = new Conexion();
@@ -19,6 +24,10 @@ class controladorCliente{
         unset($conex);
     }
     
+    /*
+     * Método para buscar al Cliente, dónde reciebe el DNI y la contraseña, 
+     * y le pasamos el array de errores
+     */
     public static function buscarCliente($dni,$clave,&$errores) {
         try {
             $conex = new Conexion();
@@ -28,20 +37,20 @@ class controladorCliente{
             if ($result->rowCount()) {
                 $registro = $result->fetchObject();
                 $c = new Cliente($registro->DNI, $registro->Nombre, $registro->Apellidos, $registro->Direccion, $registro->Localidad,$registro->Clave,$registro->Tipo);
-                // como es un objeto de la misma clase se puede hacer así
+  
                 return $c;
             } 
             unset($result);
             unset($conex);
         } catch (PDOException $ex) {
-            //echo '<a href=index.php>Ir a inicio</a>';
-            
-            //die('error con la base de datos' . $ex->getMessage());
              $errores[]=$exc->getMessage();
         }
         unset($conex);
     }
     
+    /*
+     * Método para recuperar el listado de Clientes de la bbdd
+     */
     public static function recuperarTodos() {
         try {
             $conex = new Conexion();

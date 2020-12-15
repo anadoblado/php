@@ -3,19 +3,19 @@ require_once './Controlador/controladorJuego.php';
 require_once './Controlador/controladorCliente.php';
 require_once './Controlador/controladorAlquiler.php';
 
+// inicio de sesión
 session_start();
+
+// controla que si no hay sesión iniciada no puedas entrar
 if(!isset($_SESSION['nombre'])){
     header("Location:index.php");
     }
 
 
+    // recoge el resultado del botón de borrar 
 if(isset($_POST['borrar'])){
-    
     controladorJuego::eliminarJuego($_POST['borrar']);
-  
 }
-
-
 
 ?>
 <!DOCTYPE html>
@@ -37,7 +37,6 @@ if(isset($_POST['borrar'])){
     </head>
     <body>
            
-
         <div class="container py-3">
             <div class="ml-3">
                 <?php echo "Hola " . $_SESSION['nombre']; ?>
@@ -67,13 +66,13 @@ if(isset($_POST['borrar'])){
                             <th></th>
                             <th></th>
                            
+                           
                         </tr>
                     </thead>
 
                     <?php
                     try {
-                        $conex = new Conexion();
-
+                        
                         $juegos = controladorJuego::recuperarTodos();
 
                         foreach ($juegos as $values) {
