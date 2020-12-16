@@ -113,8 +113,9 @@ class controladorJuego{
       
       /*
        * Método que recibe el Código del juego, y lo elimina de la bbdd
+       * es estático porque no usa un objeto, no se crea o se usa instancia de juegos
        */
-      public function eliminarJuego($codigo) {
+      public static function eliminarJuego($codigo) {
         try {
             $conex = new Conexion();
             $conex->exec("DELETE from juegos where Codigo='$codigo'");

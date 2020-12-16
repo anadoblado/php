@@ -13,7 +13,7 @@ class controladorCliente{
          try {
             $conex = new Conexion();
             $pass= md5($c->clave);
-            $conex->exec("INSERT INTO clinte (DNI,Nombre,Apellidos,Direccion,Localidad,Clave,Tipo) VALUES ('$c->dni','$c->nombre','$c->apellidos','$c->direccion','$c->localidad', '$pass', '$c->tipo')");
+            $conex->exec("INSERT INTO cliente (DNI,Nombre,Apellidos,Direccion,Localidad,Clave,Tipo) VALUES ('$c->dni','$c->nombre','$c->apellidos','$c->direccion','$c->localidad', '$pass', '$c->tipo')");
             // si queremos que devuelva algo return;
         } catch (PDOException $ex) {
             //echo '<a href=index.php>Ir a inicio</a>';
