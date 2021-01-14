@@ -30,7 +30,7 @@ class controladorAlquiler{
     public static function recuperarTodosConCliente(){
         try{
            $conex = new Conexion();
-           $result = $conex->query("SELECT Imagen, Nombre_juego, Nombre_consola,Anno, Precio, Nombre FROM alquiler, cliente, juegos WHERE Cod_juego=Codigo AND DNI_cliente=DNI AND Fecha_devol='null'");
+           $result = $conex->query("SELECT Imagen, Nombre_juego, Nombre_consola, Anno, Precio, Nombre FROM alquiler, cliente, juegos WHERE Cod_juego=Codigo AND DNI_cliente=DNI AND Alguilado='SI'");
            return $result;
         } catch (PDOException $ex){
             die('error con la base de datos');

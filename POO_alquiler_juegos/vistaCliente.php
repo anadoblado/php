@@ -56,7 +56,10 @@ if (isset($_POST['alquilar'])){
             <form action="" method="post">
                  <button type="submit" name="cerrar" class="btn btn-dark">Cerrar sesión</button>
             </form>
-            <a href="vistaCliente.php" >Listado de Juegos</a> -- <a href="vistaJuegosAlquilados.php" >Listado de Juegos Alquilados</a> -- <a href="juegosNoAlquilados.php" >Listado de Juegos NO Alquilados</a> -- <a href="misJuegosAlquilados.php" >Mis Juegos Alquilados</a>
+            <a href="vistaCliente.php" >Listado de Juegos</a> -- <a href="vistaJuegosAlquilados.php" >Listado de Juegos Alquilados</a> 
+            -- <a href="juegosNoAlquilados.php" >Listado de Juegos NO Alquilados</a> 
+            -- <a href="misJuegosAlquilados.php" >Mis Juegos Alquilados</a>
+            -- <a href="vistaEditarC.php?dni=<?php echo $_SESSION['dni'];?>" >Modificar mis datos</a>
 
             <div class="row">
                 <div class="col">

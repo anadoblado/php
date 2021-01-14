@@ -27,6 +27,10 @@ if(isset($_POST['enviar']) && isset($_POST['dni']) && isset($_POST['pass'])){
     }
     
 }
+if(isset($_POST['registrar'])){ 
+    header("location:registrarCliente.php");
+    
+}
 
 ?>
 <html>
@@ -49,6 +53,7 @@ if(isset($_POST['enviar']) && isset($_POST['dni']) && isset($_POST['pass'])){
                 <input type="text" name="dni" placeholder="Dni">
                 <input type="text" name="pass" placeholder="Contraseña">
                 <button type="submit" name="enviar" class="btn btn-light">Loguear</button>
+                 <button type="submit" name="registrar" class="btn btn-light">Registrar</button>
 <!--                <input type="submit" value="Loguear" name="enviar">-->
             </form>
             <div class="row">

@@ -58,7 +58,7 @@ if (isset($_POST['alquilar'])){
 <!--                <input type="submit" name="cerrar" value="Cerrar sesión">-->
             </form>
             <a href="vistaAdministrador.php" >Listado de Juegos</a> -- <a href="vistaJuegosAlquilados.php" >Listado de Juegos Alquilados</a> -- <a href="juegosNoAlquilados.php" >Listado de Juegos NO Alquilados</a> -- <a href="misJuegosAlquilados.php" >Mis Juegos Alquilados</a>
-            -- <a href="nuevoJuego.php">Añadir juego</a> -- <a href="administrarJuegos.php">Administrar juegos</a>
+            -- <a href="nuevoJuego.php">Añadir juego</a> -- <a href="administrarJuegos.php">Administrar juegos</a>-- <a href="administrarClientes.php">Administrar clientes</a>
 
             <div class="row">
                 <div class="col">

@@ -27,7 +27,7 @@ class controladorJuego{
     public static function buscarJuego($codigo) {
         try {
             $conex = new Conexion();
-            $result = $conex->query("SELECT * FROM juegos WHERE codigo='$codigo'");
+            $result = $conex->query("SELECT * FROM juegos WHERE Codigo='$codigo'");
             if ($result->rowCount()) {
                 $registro = $result->fetchObject();
                 $j = new Juegos($registro->Codigo, $registro->Nombre_juego, $registro->Nombre_consola, $registro->Anno, $registro->Precio,$registro->Alguilado,$registro->Imagen, $registro->descripcion);

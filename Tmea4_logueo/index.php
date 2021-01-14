@@ -9,9 +9,6 @@ if (!isset($_SESSION["intentos"])) {
 if (isset($_SESSION['user'])){
     header("location:inicio.php");
 }
-//if ($_SESSION["intentos"] == 0) {
-//    header("location:intentos.php");
-//}
 
 if (isset($_POST['enviar']) && isset($_POST['user']) && isset($_POST['pass'])) {
 

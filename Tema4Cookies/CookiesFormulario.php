@@ -7,12 +7,12 @@ if (isset($_POST['enviar'])) {
     $fecha = date('d-m-y h:i:s');
     $check = $_POST['recordar'];
 
-    setcookie('nombreUsuario', $nombre, time()+3600);
-    setcookie('passUsuario', $pass, time()+3600);
-    setcookie("ultimoAcceso", $fecha, time()+3600);
+    setcookie('nombreUsuario', $nombre, time() + 3600);
+    setcookie('passUsuario', $pass, time() + 3600);
+    setcookie("ultimoAcceso", $fecha, time() + 3600);
 
     if (isset($_POST['recordar']))
-        setcookie("chekeo", "checked", time()+3600);
+        setcookie("chekeo", "checked", time() + 3600);
 }
 ?>
 
@@ -39,10 +39,11 @@ if (isset($_POST['enviar']) && (!empty($_POST['nombre'])) && (!empty($_POST['pas
     $obj = $result->fetch();
 
     if ($_POST['nombre'] == $obj['nombre'] && md5($_POST['pass']) === $obj['password']) {
-        header('Location: GuardaCookies.php');
-    } else {
-
+        // header('Location: GuardaCookies.php');
         header('Location: CookiesFormulario.php');
+    } else {
+        header('Location: GuardaCookies.php');
+       // header('Location: CookiesFormulario.php');
     }
 } else {
     ?>
@@ -50,17 +51,17 @@ if (isset($_POST['enviar']) && (!empty($_POST['nombre'])) && (!empty($_POST['pas
 
     <form action="" method="post">
         Nombre: <input type="text" name="nombre" value="<?php
-    if (isset($_POST['volver']) && isset($_COOKIE['chekeo'])) {
-        echo $_COOKIE['nombreUsuario'];
-    }
-    ?>" >
+        if (isset($_POST['volver']) && isset($_COOKIE['chekeo'])) {
+            echo $_COOKIE['nombreUsuario'];
+        }
+        ?>" >
         <br>
         <br>
         Password: <input type="password" name="pass" value="<?php
-    if (isset($_POST['volver']) && isset($_COOKIE['chekeo'])) {
-        echo $_COOKIE['passUsuario'];
-    }
-    ?>" >
+        if (isset($_POST['volver']) && isset($_COOKIE['chekeo'])) {
+            echo $_COOKIE['passUsuario'];
+        }
+        ?>" >
         <br>
         Recordarme: <input type="checkbox" name="recordar" value="<?php if (isset($_COOKIE['chekeo'])) echo $_COOKIE['chekeo']; ?>">
         <br>
@@ -69,11 +70,10 @@ if (isset($_POST['enviar']) && (!empty($_POST['nombre'])) && (!empty($_POST['pas
 
     </form>
     <?php
-    if(isset($_POST['volver']) && (!isset($_COOKIE['chekeo']))){
-    setcookie('nombreUsuario',  $_COOKIE['nombreUsuario'], time()-3600);
-    setcookie('passUsuario',  $_COOKIE['passUsuario'],  time()-3600);
-    setcookie("ultimoAcceso",  $_COOKIE['ultimoAcceso'],  time()-3600);
+    if (isset($_POST['volver']) && (!isset($_COOKIE['chekeo']))) {
+        setcookie('nombreUsuario', $_COOKIE['nombreUsuario'], time() - 3600);
+        setcookie('passUsuario', $_COOKIE['passUsuario'], time() - 3600);
+        setcookie("ultimoAcceso", $_COOKIE['ultimoAcceso'], time() - 3600);
     }
-   
 }
 ?>

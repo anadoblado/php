@@ -9,8 +9,9 @@ class Cliente {
     private $localidad;
     private $clave;
     private $tipo;
+    private $imagen;
 
-    public function __construct($dni = "", $nombre = "", $apellidos = "", $direccion = "", $localidad = "", $clave = "", $tipo = "") {
+    public function __construct($dni = "", $nombre = "", $apellidos = "", $direccion = "", $localidad = "", $clave = "", $tipo = "", $imagen = "") {
         $this->dni = $dni;
         $this->nombre = $nombre;
         $this->apellidos = $apellidos;
@@ -18,10 +19,11 @@ class Cliente {
         $this->localidad = $localidad;
         $this->clave = $clave;
         $this->tipo = $tipo;
+        $this->imagen = $imagen;
 
         }
 
-        public function nuevoCliente($dni, $nombre, $apellidos, $direccion, $localidad, $clave, $tipo){
+        public function nuevoCliente($dni, $nombre, $apellidos, $direccion, $localidad, $clave, $tipo,$imagen){
         $this->dni = $dni;
         $this->nombre = $nombre;
         $this->apellidos = $apellidos;
@@ -29,6 +31,7 @@ class Cliente {
         $this->localidad = $localidad;
         $this->clave = $clave;
         $this->tipo = $tipo;
+        $this->imagen = $imagen;
     }
     
     public function __get($name) {
