@@ -1,8 +1,6 @@
 <?php
-
 // cargar la librería de SOAP
 require_once __DIR__ . '/vendor/autoload.php';
-//require_once 'Funciones.php';
 require_once './conexion.php';
 
 // creamos el nuevo servidor y el WSDL
@@ -34,6 +32,9 @@ $server->wsdl->schemaTargenNamespace = $namespace;
 //}
 
 $server->register('getPVP', array('codigo' => "xsd:string"), array("return" => "xsd:string"), FALSE, FALSE, FALSE, FALSE, "getPVP");
+$server->register('getStock', array('codigo' => "xsd:string", 'cod_tienda' => "xsd:string"), array("return" => "xsd:string"), FALSE, FALSE, FALSE, FALSE, "getStock");
+$server->register('getFamilias', array(), array("return" => "xsd:Array"), FALSE, FALSE, FALSE, FALSE, "getFamilias");
+$server->register('getProductoFamilia', array('codigo_familia' => "xsd:string"), array("return" => "xsd:Array"), FALSE, FALSE, FALSE, FALSE, "getProductoFamilia");
 
 function getPVP($codigo) {
     try {
@@ -43,6 +44,65 @@ function getPVP($codigo) {
             $registro = $result->fetchObject();
             $precio = $registro->PVP;
             return $precio;
+        }
+        unset($result);
+        unset($conex);
+    } catch (PDOException $ex) {
+         $errores[] = $exc->getMessage();
+        die('error con la base de datos');
+    }
+}
+
+function getStock($codigo, $cod_tienda) {
+    try {
+        $conex = new Conexion();
+        $result = $conex->query("SELECT unidades FROM stock WHERE producto='$codigo' and tienda='$cod_tienda'");
+        if ($result->rowCount()) {
+            $registro = $result->fetchObject();
+            $unidades = $registro->unidades;
+            return $unidades;
+        }
+        unset($result);
+        unset($conex);
+    } catch (PDOException $ex) {
+         $errores[] = $exc->getMessage();
+        die('error con la base de datos');
+    }
+}
+
+function getFamilias() {
+    try {
+        $conex = new Conexion();
+        $result = $conex->query("SELECT cod FROM familia");
+        $familias=[];
+        if ($result->rowCount()) {
+            while ($registro = $result->fetchObject()){
+                foreach ($registro as $key) {
+                    array_push($familias, $key);
+                }
+            }
+            return $familias;
+        }
+        unset($result);
+        unset($conex);
+    } catch (PDOException $ex) {
+         $errores[] = $exc->getMessage();
+        die('error con la base de datos');
+    }
+}
+
+function getProductoFamilia($codigo_familia) {
+    try {
+        $conex = new Conexion();
+        $result = $conex->query("SELECT cod FROM producto WHERE familia='$codigo_familia'");
+        $productos=[];
+        if ($result->rowCount()) {
+            while ($registro = $result->fetchObject()){
+                foreach ($registro as $key) {
+                    array_push($productos, $key);
+                }
+            }
+            return $productos;
         }
         unset($result);
         unset($conex);
