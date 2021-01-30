@@ -1,5 +1,5 @@
 <?php
-
+echo PHP_VERSION;
 require_once __DIR__ . '/vendor/autoload.php';
 $server = new nusoap_server();
 $namespace = "http://localhost/Tarea6/tarea/Serveje4.php";
@@ -28,13 +28,19 @@ function mano($cantidad) {
     $numero = array(1, 2, 3, 4, 5, 6, 7, 'Sota', 'Caballo', 'Rey');
     $palo = array("Oros", "Copas", "Espadas", "Bastos");
     for ($i = 1; $i <= $cantidad; $i++) {
-        $numeroAle[] = $numero[array_rand($numero)];
-        $paloAle[] = $palo[array_rand($palo)];
+        $numeroAle[$i] = $numero[array_rand($numero)];
+        $paloAle[$i] = $palo[array_rand($palo)];
         $cartas = array_merge($numeroAle, $paloAle);
-        print_r($cartas);
-        $mano[] = array_push($array);
+        //print_r($cartas);
+        $mano[$i]=$cartas;
+        //array_push($mano, $cartas);
     }
-    return $mano[];
+//    $numAle = $numero[array_rand($numero, $cantidad)];
+//    $palAle = $palo[array_rand($palo, $cantidad)];
+//    $cartas = array_merge_recursive($numAle,$palAle);
+//    $mano[] = $cartas;
+  
+    return $mano;
 }
 
 //Desplegaremos con $server->service nuestro servicio web
