@@ -2,26 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07dc011a-078b-4b18-bb03-68a19658dd2d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/catalog/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/catalog/edite.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/catalog/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/catalog/show.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/partials/navbar.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../proyectoLaravel/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../proyectoLaravel/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../proyectoLaravel/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../proyectoLaravel/.idea/proyectoLaravel.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../proyectoLaravel/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../proyectoLaravel/resources/views/frutas/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../proyectoLaravel/resources/views/prueba/cabecera.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../proyectoLaravel/resources/views/prueba/contacto.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../proyectoLaravel/resources/views/prueba/layout.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../proyectoLaravel/resources/views/prueba/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tarea6/tarea/CliEje4.php" beforeDir="false" afterPath="$PROJECT_DIR$/../Tarea6/tarea/CliEje4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tarea6/tarea/Serveje4.php" beforeDir="false" afterPath="$PROJECT_DIR$/../Tarea6/tarea/Serveje4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proyectoLaravel/app/Http/Controllers/FrutaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../proyectoLaravel/app/Http/Controllers/FrutaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proyectoLaravel/resources/views/frutas/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../proyectoLaravel/resources/views/frutas/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proyectoLaravel/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/../proyectoLaravel/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,8 +24,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../proyectoLaravel/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="52" column="78" lean-forward="true" selection-start-line="52" selection-start-column="78" selection-end-line="52" selection-end-column="78" />
+            <state relative-caret-position="463">
+              <caret line="53" column="87" selection-start-line="53" selection-start-column="87" selection-end-line="53" selection-end-column="87" />
               <folding>
                 <element signature="e#7#48#0#PHP" expanded="true" />
               </folding>
@@ -50,22 +34,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../proyectoLaravel/app/Http/Kernel.php">
+        <entry file="file://$PROJECT_DIR$/../proyectoLaravel/resources/views/frutas/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="65" column="44" lean-forward="true" selection-start-line="65" selection-start-column="44" selection-end-line="65" selection-end-column="44" />
-              <folding>
-                <element signature="e#28#62#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="352">
+              <caret line="16" column="56" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="56" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../proyectoLaravel/app/Http/Middleware/MayorEdad.php">
+        <entry file="file://$PROJECT_DIR$/../proyectoLaravel/app/Http/Controllers/FrutaController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="19" column="44" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="44" />
+            <state relative-caret-position="462">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
@@ -82,15 +63,15 @@
         <option value="$PROJECT_DIR$/resources/views/catalog/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/catalog/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
-        <option value="$PROJECT_DIR$/../proyectoLaravel/app/Http/Controllers/FrutaController.php" />
-        <option value="$PROJECT_DIR$/../proyectoLaravel/resources/views/frutas/index.blade.php" />
         <option value="$PROJECT_DIR$/../proyectoLaravel/app/Http/Kernel.php" />
         <option value="$PROJECT_DIR$/../proyectoLaravel/app/Http/Middleware/MayorEdad.php" />
-        <option value="$PROJECT_DIR$/../proyectoLaravel/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/master.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/catalog/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/catalog/edite.blade.php" />
+        <option value="$PROJECT_DIR$/../proyectoLaravel/resources/views/frutas/index.blade.php" />
+        <option value="$PROJECT_DIR$/../proyectoLaravel/routes/web.php" />
+        <option value="$PROJECT_DIR$/../proyectoLaravel/app/Http/Controllers/FrutaController.php" />
       </list>
     </option>
   </component>
@@ -253,12 +234,32 @@
               <item name="proyectoLaravel" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ejercicio1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proyectoLaravel" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
               <item name="Middleware" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ejercicio1" type="b2602c69:ProjectViewProjectNode" />
               <item name="proyectoLaravel" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ejercicio1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proyectoLaravel" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ejercicio1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proyectoLaravel" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="frutas" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ejercicio1" type="b2602c69:ProjectViewProjectNode" />
@@ -274,6 +275,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../proyectoLaravel" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -311,18 +313,18 @@
       <updated>1611823367575</updated>
       <workItem from="1611823368836" duration="3143000" />
       <workItem from="1611906482144" duration="6929000" />
-      <workItem from="1612032302825" duration="1070000" />
+      <workItem from="1612032302825" duration="2543000" />
+      <workItem from="1612184933928" duration="672000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11142000" />
+    <option name="totallyTimeSpent" value="13287000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="938" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="938" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14605543" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14765458" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -387,20 +389,6 @@
     <entry file="file://$PROJECT_DIR$/../proyectoLaravel/resources/views/prueba/contacto.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/../proyectoLaravel/app/Http/Controllers/FrutaController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../proyectoLaravel/resources/views/frutas/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/app.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -444,10 +432,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="33" column="42" lean-forward="true" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../proyectoLaravel/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="33" column="42" lean-forward="true" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../proyectoLaravel/app/Http/Kernel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="65" column="44" lean-forward="true" selection-start-line="65" selection-start-column="44" selection-end-line="65" selection-end-column="44" />
+        <state relative-caret-position="1408">
+          <caret line="65" column="44" selection-start-line="65" selection-start-column="44" selection-end-line="65" selection-end-column="44" />
           <folding>
             <element signature="e#28#62#0#PHP" expanded="true" />
           </folding>
@@ -461,10 +463,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../proyectoLaravel/public/web.config">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../proyectoLaravel/resources/views/frutas/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" column="56" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../proyectoLaravel/app/Http/Controllers/FrutaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../proyectoLaravel/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="52" column="78" lean-forward="true" selection-start-line="52" selection-start-column="78" selection-end-line="52" selection-end-column="78" />
+        <state relative-caret-position="463">
+          <caret line="53" column="87" selection-start-line="53" selection-start-column="87" selection-end-line="53" selection-end-column="87" />
           <folding>
             <element signature="e#7#48#0#PHP" expanded="true" />
           </folding>

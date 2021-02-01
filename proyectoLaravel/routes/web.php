@@ -51,6 +51,7 @@ Route::get('layout', function (){
 
 Route::prefix('fruterias')->group(function (){
     Route::get('frutas',	[FrutaController::class,'index'])->name('frutas');
+    Route::post('frutas', [FrutaController::class, 'recibirFormulario'])->name('recibir');
     Route::get('naranjas',	[FrutaController::class,'naranjas']);
     Route::get('peras',	[FrutaController::class,'peras'])->name('peras');
 });

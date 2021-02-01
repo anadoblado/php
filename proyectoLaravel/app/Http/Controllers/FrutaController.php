@@ -17,4 +17,8 @@ class FrutaController extends Controller
     public function naranjas(){
         return "Web de naranjas";
     }
+
+    public function recibirFormulario(Request $request){
+
+    }
 }
