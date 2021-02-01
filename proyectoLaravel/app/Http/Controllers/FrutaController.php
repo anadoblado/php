@@ -19,6 +19,14 @@ class FrutaController extends Controller
     }
 
     public function recibirFormulario(Request $request){
-
+        $request->validate([
+            'nombre'=>'required|max:15',
+            'descripcion'=>'required',
+        ]);
+        //if ($request->input('nombre') != 'pera'){
+        //    return redirect()->route('frutas')->withInput()->with('error', "Se ha producido un error");
+        //}else{
+        //    return redirect()->route('peras');
+        //}
     }
 }

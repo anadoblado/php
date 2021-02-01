@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07dc011a-078b-4b18-bb03-68a19658dd2d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../proyectoLaravel/app/Http/Controllers/FrutaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../proyectoLaravel/app/Http/Controllers/FrutaController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../proyectoLaravel/resources/views/frutas/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../proyectoLaravel/resources/views/frutas/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../proyectoLaravel/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/../proyectoLaravel/routes/web.php" afterDir="false" />
@@ -21,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../proyectoLaravel/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="463">
-              <caret line="53" column="87" selection-start-line="53" selection-start-column="87" selection-end-line="53" selection-end-column="87" />
+            <state relative-caret-position="485">
+              <caret line="54" column="80" selection-start-line="54" selection-start-column="80" selection-end-line="54" selection-end-column="80" />
               <folding>
                 <element signature="e#7#48#0#PHP" expanded="true" />
               </folding>
@@ -33,11 +32,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../proyectoLaravel/resources/views/frutas/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="16" column="56" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="56" />
+            <state relative-caret-position="396">
+              <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -45,8 +44,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../proyectoLaravel/app/Http/Controllers/FrutaController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="506">
+              <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -69,9 +68,9 @@
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/catalog/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/catalog/edite.blade.php" />
-        <option value="$PROJECT_DIR$/../proyectoLaravel/resources/views/frutas/index.blade.php" />
         <option value="$PROJECT_DIR$/../proyectoLaravel/routes/web.php" />
         <option value="$PROJECT_DIR$/../proyectoLaravel/app/Http/Controllers/FrutaController.php" />
+        <option value="$PROJECT_DIR$/../proyectoLaravel/resources/views/frutas/index.blade.php" />
       </list>
     </option>
   </component>
@@ -197,7 +196,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="264" />
     <option name="y" value="6" />
     <option name="width" value="1400" />
@@ -314,12 +313,12 @@
       <workItem from="1611823368836" duration="3143000" />
       <workItem from="1611906482144" duration="6929000" />
       <workItem from="1612032302825" duration="2543000" />
-      <workItem from="1612184933928" duration="672000" />
+      <workItem from="1612184933928" duration="3020000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13287000" />
+    <option name="totallyTimeSpent" value="15635000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="938" extended-state="6" />
@@ -466,27 +465,27 @@
     <entry file="file://$PROJECT_DIR$/../proyectoLaravel/public/web.config">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/../proyectoLaravel/resources/views/frutas/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/../proyectoLaravel/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="56" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="56" />
+        <state relative-caret-position="485">
+          <caret line="54" column="80" selection-start-line="54" selection-start-column="80" selection-end-line="54" selection-end-column="80" />
+          <folding>
+            <element signature="e#7#48#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../proyectoLaravel/app/Http/Controllers/FrutaController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="506">
+          <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../proyectoLaravel/routes/web.php">
+    <entry file="file://$PROJECT_DIR$/../proyectoLaravel/resources/views/frutas/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="53" column="87" selection-start-line="53" selection-start-column="87" selection-end-line="53" selection-end-column="87" />
-          <folding>
-            <element signature="e#7#48#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="396">
+          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
         </state>
       </provider>
     </entry>

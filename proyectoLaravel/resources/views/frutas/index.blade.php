@@ -6,13 +6,21 @@
     @endforeach
 </ul>
 
-<form action="" method="post">
-        <p>
-                Nombre de la fruta: <input type="text" name="nombre">
+@if (session('error'))
+        {{session('error')}}
+@endif
 
-        </p>
+<form action="" method="post">
+        @csrf
         <p>
-                Descripción: <textarea name="descripcion">Descripción</textarea>
+                Nombre de la fruta: <input type="text" name="nombre" value="{{old('nombre')}}">
+        </p>
+        @error('nombre')
+        <!--<div style="color:darkred">malooooo</div>-->
+        <div class="alert alert-danger">{{$message}}</div>
+        @enderror
+        <p>
+                Descripción: <textarea name="descripcion"></textarea>
         </p>
         <input type="submit" name="enviar" value="Enviar">
 </form>
