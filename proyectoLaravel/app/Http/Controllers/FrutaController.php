@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ValidationFormRequest;
 use Illuminate\Http\Request;
 
 class FrutaController extends Controller
@@ -18,11 +19,17 @@ class FrutaController extends Controller
         return "Web de naranjas";
     }
 
-    public function recibirFormulario(Request $request){
+    public function recibirFormulario(ValidationFormRequest $request){
+        // para personalizar los mensajes
+       /* $messages = ['nombre.requires'=>'Error, el campo es obligatorio',
+           'nombre.min:15'=>'Mínimo 15',
+           'descripcion.required'=>'Descripción obligatoria'];
         $request->validate([
-            'nombre'=>'required|max:15',
+            'nombre'=>'min:15|required',
             'descripcion'=>'required',
-        ]);
+        ], $messages);
+       */
+       $request->validated();
         //if ($request->input('nombre') != 'pera'){
         //    return redirect()->route('frutas')->withInput()->with('error', "Se ha producido un error");
         //}else{
