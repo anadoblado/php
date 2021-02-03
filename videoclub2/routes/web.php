@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\FrutaController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CatalogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'home'])->name('home');
+Route::get('/', [HomeController::class, 'getHome'])->name('home');
 
 
 Route::get('login', function(){
@@ -27,23 +29,11 @@ Route::get('logout', function(){
     return 'Vista logout usuario';
 });
 
-Route::get('catalog', function(){
-    return view('catalog.index');
-    //return 'Listado de películas';
-})->name('List');
+Route::get('catalog', [CatalogController::class, 'getIndex'])->name('List');
 
-Route::get('catalog/show/{id?}', function($id="5"){
-    return view('catalog.show', array('id'=>$id));
-    //return 'Vista detalle película {'.$id.'}';
-})->name('Show');
+Route::get('catalog/show/{id?}', [CatalogController::class, 'getShow'])->name('Show');
 
-Route::get('catalog/create', function(){
-    return view('catalog.create');
-    //return 'Añadir película';
-})->name('Create');
+Route::get('catalog/create', [CatalogController::class, 'getCreate'])->name('Create');
 
-Route::get('catalog/edite/{id?}', function($id="5"){
-    return view('catalog.edite',array('id'=>$id));
-    //return 'Modificar película {'.$id.'}';
-})->name('Edit');
+Route::get('catalog/edite/{id?}', [CatalogController::class, 'getEdit'])->name('Edit');
 

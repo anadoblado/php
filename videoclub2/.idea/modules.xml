@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/ejercicio1.iml" filepath="$PROJECT_DIR$/.idea/ejercicio1.iml" />
       <module fileurl="file://$PROJECT_DIR$/../proyectoLaravel/.idea/proyectoLaravel.iml" filepath="$PROJECT_DIR$/../proyectoLaravel/.idea/proyectoLaravel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../videoclub/.idea/videoclub.iml" filepath="$PROJECT_DIR$/../videoclub/.idea/videoclub.iml" />
     </modules>
   </component>
 </project>
