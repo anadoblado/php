@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3bf76d40-4d4b-47ca-8345-f30c7b4acc19" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/node_modules/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/node_modules/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/asm89/stack-cors/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/brick/math/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/composer/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/dnoegel/php-xdg-base-dir/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/doctrine/inflector/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/doctrine/instantiator/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/doctrine/lexer/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/dragonmantank/cron-expression/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/egulias/email-validator/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/facade/flare-client-php/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/facade/ignition/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/facade/ignition-contracts/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/fakerphp/faker/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/fideloper/proxy/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/filp/whoops/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/fruitcake/laravel-cors/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/graham-campbell/result-type/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/guzzlehttp/guzzle/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/guzzlehttp/promises/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/guzzlehttp/psr7/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/hamcrest/hamcrest-php/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/laravel/framework/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/laravel/sail/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/laravel/tinker/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/laravel/ui/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/league/commonmark/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/league/flysystem/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/league/mime-type-detection/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/mockery/mockery/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/monolog/monolog/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/myclabs/deep-copy/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/nesbot/carbon/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/nikic/php-parser/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/nunomaduro/collision/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/opis/closure/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/phar-io/manifest/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/phar-io/version/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/phpdocumentor/reflection-common/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/phpdocumentor/reflection-docblock/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/phpdocumentor/type-resolver/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/phpoption/phpoption/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/phpspec/prophecy/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/phpunit/php-code-coverage/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/phpunit/php-file-iterator/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/phpunit/php-invoker/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/phpunit/php-text-template/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/phpunit/php-timer/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/phpunit/phpunit/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/psr/container/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/psr/event-dispatcher/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/psr/http-client/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/psr/http-message/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/psr/log/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/psr/simple-cache/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/psy/psysh/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/ralouphie/getallheaders/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/ramsey/collection/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/ramsey/uuid/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/sebastian/cli-parser/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/sebastian/code-unit/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/sebastian/code-unit-reverse-lookup/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/sebastian/comparator/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/sebastian/complexity/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/sebastian/diff/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/sebastian/environment/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/sebastian/exporter/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/sebastian/global-state/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/sebastian/lines-of-code/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/sebastian/object-enumerator/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/sebastian/object-reflector/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/sebastian/recursion-context/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/sebastian/resource-operations/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/sebastian/type/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/sebastian/version/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/swiftmailer/swiftmailer/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/symfony/console/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/symfony/css-selector/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/symfony/deprecation-contracts/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/symfony/error-handler/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/symfony/event-dispatcher/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/symfony/event-dispatcher-contracts/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/symfony/finder/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/symfony/http-client-contracts/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/symfony/http-foundation/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/symfony/http-kernel/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/symfony/mime/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/symfony/polyfill-ctype/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/symfony/polyfill-iconv/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/symfony/polyfill-intl-grapheme/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/symfony/polyfill-intl-idn/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/symfony/polyfill-intl-normalizer/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/symfony/polyfill-mbstring/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/symfony/polyfill-php72/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/symfony/polyfill-php73/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/symfony/polyfill-php80/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/symfony/process/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/symfony/routing/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/symfony/service-contracts/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/symfony/string/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/symfony/translation/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/symfony/translation-contracts/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/symfony/var-dumper/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/theseer/tokenizer/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/tijsverkoyen/css-to-inline-styles/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/vlucas/phpdotenv/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/voku/portable-ascii/" />
+    <ignored path="$PROJECT_DIR$/../proyectoLaravel/vendor/webmozart/assert/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/asm89/stack-cors/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/brick/math/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/composer/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/dnoegel/php-xdg-base-dir/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/doctrine/inflector/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/doctrine/instantiator/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/doctrine/lexer/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/dragonmantank/cron-expression/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/egulias/email-validator/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/facade/flare-client-php/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/facade/ignition/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/facade/ignition-contracts/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/fakerphp/faker/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/fideloper/proxy/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/filp/whoops/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/fruitcake/laravel-cors/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/graham-campbell/result-type/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/guzzlehttp/guzzle/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/guzzlehttp/promises/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/guzzlehttp/psr7/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/hamcrest/hamcrest-php/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/laravel/framework/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/laravel/sail/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/laravel/tinker/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/laravel/ui/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/league/commonmark/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/league/flysystem/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/league/mime-type-detection/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/mockery/mockery/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/monolog/monolog/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/myclabs/deep-copy/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/nesbot/carbon/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/nikic/php-parser/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/nunomaduro/collision/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/opis/closure/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/phar-io/manifest/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/phar-io/version/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/phpdocumentor/reflection-common/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/phpdocumentor/reflection-docblock/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/phpdocumentor/type-resolver/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/phpoption/phpoption/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/phpspec/prophecy/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/phpunit/php-code-coverage/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/phpunit/php-file-iterator/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/phpunit/php-invoker/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/phpunit/php-text-template/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/phpunit/php-timer/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/phpunit/phpunit/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/psr/container/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/psr/event-dispatcher/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/psr/http-client/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/psr/http-message/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/psr/log/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/psr/simple-cache/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/psy/psysh/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/ralouphie/getallheaders/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/ramsey/collection/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/ramsey/uuid/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/sebastian/cli-parser/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/sebastian/code-unit/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/sebastian/code-unit-reverse-lookup/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/sebastian/comparator/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/sebastian/complexity/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/sebastian/diff/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/sebastian/environment/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/sebastian/exporter/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/sebastian/global-state/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/sebastian/lines-of-code/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/sebastian/object-enumerator/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/sebastian/object-reflector/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/sebastian/recursion-context/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/sebastian/resource-operations/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/sebastian/type/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/sebastian/version/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/swiftmailer/swiftmailer/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/symfony/console/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/symfony/css-selector/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/symfony/deprecation-contracts/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/symfony/error-handler/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/symfony/event-dispatcher/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/symfony/event-dispatcher-contracts/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/symfony/finder/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/symfony/http-client-contracts/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/symfony/http-foundation/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/symfony/http-kernel/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/symfony/mime/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/symfony/polyfill-ctype/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/symfony/polyfill-iconv/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/symfony/polyfill-intl-grapheme/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/symfony/polyfill-intl-idn/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/symfony/polyfill-intl-normalizer/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/symfony/polyfill-mbstring/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/symfony/polyfill-php72/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/symfony/polyfill-php73/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/symfony/polyfill-php80/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/symfony/process/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/symfony/routing/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/symfony/service-contracts/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/symfony/string/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/symfony/translation/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/symfony/translation-contracts/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/symfony/var-dumper/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/theseer/tokenizer/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/tijsverkoyen/css-to-inline-styles/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/vlucas/phpdotenv/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/voku/portable-ascii/" />
+    <ignored path="$PROJECT_DIR$/../videoclub/vendor/webmozart/assert/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="479" />
+    <option name="height" value="912" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../videoclub2" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3bf76d40-4d4b-47ca-8345-f30c7b4acc19" name="Default Changelist" comment="" />
+      <created>1612257137489</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1612257137489</updated>
+      <workItem from="1612257145397" duration="159000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="159000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="938" extended-state="6" />
+    <layout>
+      <window_info id="npm" side_tool="true" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>
