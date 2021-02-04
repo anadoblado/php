@@ -18,8 +18,10 @@
                 <p><strong>Estado: </strong> Película actualmente alquilada</p>
                 <button class="btn btn-danger">Devolver película</button>
                 @endif
+
             <a href="{{url("/")}}"> <button class="btn btn-default">Volver al listado</button></a>
-            {{-- <a href="{{url("/catalog/edit".$peliculas['id'])}}"> <button class="btn btn-warning">Editar</button></a> --}}
+        {{-- {{$id}} --}}
+            <a href="{{url("/catalog/edit/".$id)}}"> <button class="btn btn-warning">Editar</button></a>
             </p>
 
         </div>
