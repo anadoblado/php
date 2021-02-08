@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Movie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CatalogController extends Controller
 {
@@ -10,11 +12,18 @@ class CatalogController extends Controller
 
     public function getIndex(){
 
-        return view('catalog.index', ['arrayPeliculas' => $this->arrayPeliculas]);
+       // return view('catalog.index', ['arrayPeliculas' => $this->arrayPeliculas]);
+
+        //$movies = DB::table('movies')->get();
+        $movies = Movie::all();
+        return view('catalog.index')->with('peliculas', $movies);
     }
 
     public function getShow($id){
-        return view('catalog.show',['peliculas' => $this->arrayPeliculas[$id],'id'=>$id]);
+        //return view('catalog.show',['peliculas' => $this->arrayPeliculas[$id],'id'=>$id]);
+
+        $movies = Movie::findOrFail($id);
+        return view('catalog.show')->with('peliculas', $movies);
     }
 
     public function getCreate(){
@@ -22,7 +31,9 @@ class CatalogController extends Controller
     }
 
     public function getEdit($id){
-        return view('catalog.edit', array('id'=>$id));
+        $movies = Movie::findOrFail($id);
+        return view('catalog.edit')->with('peliculas', $movies);
+        //return view('catalog.edit', array('id'=>$id));
     }
 
     private $arrayPeliculas = array(
@@ -187,4 +198,5 @@ class CatalogController extends Controller
             'synopsis' => 'Un joven hastiado de su gris y monótona vida lucha contra el insomnio. En un viaje en avión conoce a un carismático vendedor de jabón que sostiene una teoría muy particular: el perfeccionismo es cosa de gentes débiles; sólo la autodestrucción hace que la vida merezca la pena. Ambos deciden entonces fundar un club secreto de lucha, donde poder descargar sus frustaciones y su ira, que tendrá un éxito arrollador.'
         )
     );
+
 }

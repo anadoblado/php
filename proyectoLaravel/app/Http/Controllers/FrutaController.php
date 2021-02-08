@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ValidationFormRequest;
+use App\Models\Fruit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -13,7 +14,15 @@ class FrutaController extends Controller
     }
 
     public function peras(){
-        return "Web de peras";
+        //$f = Fruit::find(7);
+        //dd($f);
+        //$f = Fruit::findOrFail(7);
+
+        //$f = Fruit::all();
+
+        //$f = Fruit::first();
+        $f = Fruit::where("temporada", 2)->get();
+        return view('frutas.peras')->with('frutas', $f);
     }
 
     public function naranjas(){

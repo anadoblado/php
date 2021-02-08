@@ -15,17 +15,17 @@
 
                         <div class="form-group">
                             <label for="title">Título</label>
-                            <input type="text" name="title" id="title" class="form-control">
+                            <input type="text" name="title" id="title" class="form-control" value="{{$peliculas->title}}">
                         </div>
 
                         <div class="form-group">
                             <label for="title">Año</label>
-                            <input type="number" name="anyo" id="anyo" class="form-control">
+                            <input type="number" name="anyo" id="anyo" class="form-control" value="{{$peliculas->year}}">
                         </div>
 
                         <div class="form-group">
                             <label for="title">Título</label>
-                            <input type="text" name="director" id="director" class="form-control">
+                            <input type="text" name="director" id="director" class="form-control" value="{{$peliculas->director}}">
                         </div>
 
                         <div class="form-group">
@@ -35,7 +35,7 @@
 
                         <div class="form-group">
                             <label for="synopsis">Resumen</label>
-                            <textarea name="synopsis" id="synopsis" class="form-control" rows="3"></textarea>
+                            <textarea name="synopsis" id="synopsis" class="form-control" rows="3">{{$peliculas->synopsis}}</textarea>
                         </div>
 
                         <div class="form-group text-center">
