@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Movie;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,7 +17,8 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         //DB::table('movies')->delete();
-        self::seedCatalog();
+        //self::seedCatalog();
+        self::seedUsers();
         $this->command->info('Tabla catalog inicializada');
     }
 
@@ -35,6 +37,33 @@ class DatabaseSeeder extends Seeder
         }
     }
 
+    public function seedUsers(){
+       // @foreach ($this->arrayUsers as $u)
+        $u = new User();
+        $u->name="Fran";
+        $u->email="fran@fran.es";
+        $u->password=bcrypt("1234");
+        $u->save();
+
+        $u = new User();
+        $u->name="Ana";
+        $u->email="ana@ana.es";
+        $u->password=bcrypt("1234");
+        $u->save();
+    }
+
+    private $arrayUsers = array(
+        array(
+            'name' => 'Fran',
+            'email' => 'fran@fran.es',
+            'password' => 'bcrypt("1234")'
+        ),
+        array (
+            'name' => 'Ana',
+            'email' => 'ana@ana.es',
+            'password' => 'bcrypt("1234")'
+        )
+    );
     private $arrayPeliculas = array(
         array(
             'title' => 'El padrino',

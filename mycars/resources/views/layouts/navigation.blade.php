@@ -12,8 +12,13 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                    <x-nav-link :href="route('car.index')" :active="request()->routeIs('car.index')">
+                        {{ __('MyCars') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('car.create')" :active="request()->routeIs('car.create')">
+                        {{ __('Añadir coche') }}
                     </x-nav-link>
                 </div>
             </div>

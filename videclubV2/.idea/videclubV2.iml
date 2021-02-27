@@ -115,5 +115,7 @@
     <orderEntry type="module" module-name="proyectoLaravel" />
     <orderEntry type="module" module-name="ejercicio1" />
     <orderEntry type="module" module-name="mycars" />
+    <orderEntry type="module" module-name="myOptic" />
+    <orderEntry type="module" module-name="optic_center" />
   </component>
 </module>

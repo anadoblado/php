@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Car;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CarController extends Controller
 {
@@ -13,7 +16,13 @@ class CarController extends Controller
      */
     public function index()
     {
-        return "hola";
+        $user = User::FindOrFail(Auth::id());
+
+        //si quiero recurperar algunos "where('color','blanco')
+        $mycars = $user->cars()->get();
+
+        // el with es para pasarle el objeto a la vista
+        return view('car.index')->with('mycars', $mycars);
     }
 
     /**
@@ -23,7 +32,7 @@ class CarController extends Controller
      */
     public function create()
     {
-        //
+        return view('car.create');
     }
 
     /**
@@ -34,7 +43,31 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'matricula'=>'required',
+            'marca' => 'required',
+            'modelo' => 'required',
+            'foto' => 'required|image'
+        ]);
+
+        $newCar = new Car();
+        $newCar->matricula=$request->matricula;
+        $newCar->marca=$request->marca;
+        $newCar->modelo=$request->modelo;
+        $newCar->year=$request->year;
+        $newCar->color=$request->color;
+        $newCar->fecha_ultima_revision=$request->fecha_ultima_revision;
+        $newCar->precio=$request->precio;
+        $newCar->user_id=Auth::id();
+
+        $nombrefoto = time().'_'.$request->file('foto')->getClientOriginalName();
+        $newCar->foto=$nombrefoto;
+
+        $newCar->save();
+
+        $request->file('foto')->storeAs('public/img',$nombrefoto);
+        // esto iba antes, pero ya no    return view('car.index');
+        return redirect()->route('car.index');
     }
 
     /**
@@ -45,7 +78,9 @@ class CarController extends Controller
      */
     public function show($id)
     {
-        //
+        $mycar = Car::findOrFail($id); // así le mando el coche a la vista
+        $url = 'storage/img/';
+        return view('car.show')->with('mycar', $mycar)->with('url', $url);
     }
 
     /**
@@ -56,7 +91,9 @@ class CarController extends Controller
      */
     public function edit($id)
     {
-        //
+        $mycar = Car::findOrFail($id); // así le mando el coche a la vista
+        $url = 'storage/img/';
+        return view('car.edit')->with('mycar', $mycar)->with('url', $url);
     }
 
     /**
@@ -68,7 +105,34 @@ class CarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validated = $request->validate([
+            'matricula'=>'required',
+            'marca' => 'required',
+            'modelo' => 'required',
+            'foto' => 'required|image'
+        ]);
+
+        $newCar = Car::findOrFail($id);
+        $newCar->matricula=$request->matricula;
+        $newCar->marca=$request->marca;
+        $newCar->modelo=$request->modelo;
+        $newCar->year=$request->year;
+        $newCar->color=$request->color;
+        $newCar->fecha_ultima_revision=$request->fecha_ultima_revision;
+        $newCar->precio=$request->precio;
+        $newCar->user_id=Auth::id();
+
+        //como hay foto, hay que comprobar si es la misma o quiere otra
+        if(is_uploaded_file($request->foto)){
+            $nombrefoto = time().'_'.$request->file('foto')->getClientOriginalName();
+            $newCar->foto=$nombrefoto;
+            $request->file('foto')->storeAs('public/img',$nombrefoto);
+        }
+
+        $newCar->save();
+
+        // esto iba antes, pero ya no    return view('car.index');
+        return redirect()->route('car.index');
     }
 
     /**
@@ -79,6 +143,6 @@ class CarController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return "borrar";
     }
 }

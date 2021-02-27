@@ -55,3 +55,7 @@ Route::prefix('fruterias')->group(function (){
     Route::get('naranjas',	[FrutaController::class,'naranjas'])->name('naranjas');
     Route::get('peras',	[FrutaController::class,'peras'])->name('peras');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

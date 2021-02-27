@@ -1,8 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\HomeController;
-use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,39 +21,42 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 })->name('home');
-
 Route::get('auth/login', function () {
     return view('auth.login');
 });
-
 Route::get('logout', function () {
     return view('logout');
 });
-
 Route::get('catalog/index', function () {
     return view('catalog.index');
 });
-
 Route::get('catalog/show/{id}', function ($id) {
     return view('catalog.show')->with("id",$id);
 });
-
 Route::get('catalog/create', function () {
     return view('catalog.create');
 });
-
 Route::get('catalog/edit/{id}', function ($id) {
     return view('catalog.edit', array('id'=>$id));
 });
 */
 
-
+Route::get('/login');
 Route::get("/", [HomeController::class, "getHome"])->name("home");
-Route::get("catalog", [CatalogController::class, "getIndex"])->name("index");
-Route::get("catalog/create", [CatalogController::class, "getCreate"])->name("create");
-Route::get("catalog/edit/{id}", [CatalogController::class, "getEdit"])->name("edit");
-Route::get("catalog/show/{id}", [CatalogController::class, "getShow"])->name("show");
+Route::middleware("auth")->group(function (){
+    Route::get("catalog", [CatalogController::class, "getIndex"])->name("index");
+    Route::get("catalog/create", [CatalogController::class, "getCreate"])->name("create");
+    Route::get("catalog/edit/{id}", [CatalogController::class, "getEdit"])->name("edit");
+    Route::get("catalog/show/{id}", [CatalogController::class, "getShow"])->name("show");
 
+});
 
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
+//Route::get('/dashboard', function () {
+//    return view('dashboard');
+//})->middleware(['auth'])->name('dashboard');
 
+require __DIR__.'/auth.php';

@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../videoclubV3/.idea/ejercicio1.iml" filepath="$PROJECT_DIR$/../videoclubV3/.idea/ejercicio1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../myOptic/.idea/myOptic.iml" filepath="$PROJECT_DIR$/../myOptic/.idea/myOptic.iml" />
       <module fileurl="file://$PROJECT_DIR$/../mycars/.idea/mycars.iml" filepath="$PROJECT_DIR$/../mycars/.idea/mycars.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../optic_center/.idea/optic_center.iml" filepath="$PROJECT_DIR$/../optic_center/.idea/optic_center.iml" />
       <module fileurl="file://$PROJECT_DIR$/../proyectoLaravel/.idea/proyectoLaravel.iml" filepath="$PROJECT_DIR$/../proyectoLaravel/.idea/proyectoLaravel.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/videclubV2.iml" filepath="$PROJECT_DIR$/.idea/videclubV2.iml" />
     </modules>

@@ -15,6 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/mycar/{locale?}', function ($locale='es'){
+    if(!in_array($locale, ['en', 'es'])){
+        abort('404');
+    }
+    App::setLocale($locale);
+    return view('welcome');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -25,5 +33,5 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::resource('car', CarController::class);
-Route::resource('user', UserController::class);
+Route::resource('car', CarController::class)->middleware('auth', 'verified');
+Route::resource('user', UserController::class)->middleware('auth');

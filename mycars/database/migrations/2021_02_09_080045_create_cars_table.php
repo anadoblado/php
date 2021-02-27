@@ -13,7 +13,7 @@ class CreateCarsTable extends Migration
      */
     public function up()
     {
-        Schema::create('cars', function (Blueprint $table) {
+        Schema::create('car', function (Blueprint $table) {
             $table->id();
             $table->string('matricula', 7);
             $table->string('marca');
@@ -26,7 +26,7 @@ class CreateCarsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->softDeletes();
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users'); // para poner la foreignkey
+            $table->foreign('user_id')->references('id')->on('user'); // para poner la foreignkey
         });
     }
 
@@ -37,6 +37,6 @@ class CreateCarsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cars');
+        Schema::dropIfExists('car');
     }
 }
