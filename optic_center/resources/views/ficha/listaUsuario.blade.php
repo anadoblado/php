@@ -1,4 +1,6 @@
 
+{{--<h1>{{print_r($fichas)}}</h1> --}}
+
 
 <x-app-layout>
     <x-slot name="header">
@@ -6,6 +8,7 @@
             Listado visitas
         </h2>
     </x-slot>
+
     @section('content')
         <table class="table">
             <thead>
@@ -29,15 +32,10 @@
                     <td scope="row">{{$ficha->g_ojo_der}}</td>
                     <td scope="row">{{$ficha->visita_articulo->Ref}}</td>
 
-{{--                    <td scope="row">{{$ficha->find($ficha->producto_i)->visita_articulo->Ref}}</td>--}}
+                    {{--                    <td scope="row">{{$ficha->find($ficha->producto_i)->visita_articulo->Ref}}</td>--}}
 
                     <td><a href="{{url('ficha/'.$ficha->id)}}" class="btn btn-primary">Detalles</a></td>
-                    <td><a href="{{url('ficha/'.$ficha->id.'/edit')}}" class="btn btn-warning">Editar</a></td>
-                    <td><form action="{{url('ficha/'.$ficha->id)}}"  method="post">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-danger" name="borrar">Borrar</button>
-                        </form>
+
                 </tr>
             @endforeach
             </tbody>

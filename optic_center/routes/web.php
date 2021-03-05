@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DesvioController;
 use App\Http\Controllers\FichaController;
 use App\Http\Controllers\ProbarRoleController;
 use App\Http\Controllers\ProductoController;
@@ -17,8 +18,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/listadoProductos', [DesvioController::class, 'index'])->name('/listadoProductos');
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login'); // para entrar al login directamente
 });
 
 Route::get('/dashboard', function () {
@@ -27,12 +29,15 @@ Route::get('/dashboard', function () {
 
 Route::get('/roluser', [ProbarRoleController::class, 'index']);
 
-Route::middleware(['auth', 'verified'])->group(/**
- *
- */ function (){
+Route::middleware(['auth', 'verified'])->group(function (){
     Route::resource('user', UserController::class);
     Route::resource('producto', ProductoController::class);
     Route::resource('ficha', FichaController::class);
+    Route::get('/listaUsuario', [FichaController::class, 'listaUsuario'])->name('ficha.listaUsuario');
 });
+
+//Route::resource('/producto', ProductoController::class)->middleware(['auth']);
+//Route::get('/producto', [ProductoController::class, 'index'])->middleware(['auth']);
+//Route::get('/producto/listado', [ProductoController::class, 'index'])->middleware(['auth']);;
 
 require __DIR__.'/auth.php';

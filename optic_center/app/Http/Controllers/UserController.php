@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -14,11 +15,13 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = User::FindOrFail(Auth::id());
-
-        $citas = $user->citas()->get();
-
-        return view ('cita.index')->with('citas', $citas);
+//        $user = User::FindOrFail(Auth::id());
+//
+//        $citas = $user->citas()->get();
+//
+//        return view ('cita.index')->with('citas', $citas);
+        $usuarios = User::all();
+        return view('user.index')->with('usuarios', $usuarios);
     }
 
     /**
@@ -57,7 +60,9 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::findOrFail($id);
-        return view('user.show');
+        //$url = 'storage/img/';
+        //->with('url', $url)
+        return view('user.show')->with('user',$user);
     }
 
     /**
@@ -68,7 +73,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::findOrFail($id);
+        return view('user.edit')->with('user', $user);
     }
 
     /**
@@ -80,7 +86,26 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required',
+            'apells' => 'required',
+            'dni' => 'required',
+            'email' => 'required',
+
+        ]);
+
+        $newUser = User::findOrFail($id);
+        $newUser->name=$request->name;
+        $newUser->apells=$request->apells;
+        $newUser->dni=$request->dni;
+        $newUser->email=$request->email;
+        $newUser->address=$request->address;
+        $newUser->cp=$request->cp;
+        $newUser->city=$request->city;
+        $newUser->save();
+
+
+        return redirect()->route('user.index');
     }
 
     /**
@@ -91,6 +116,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->route('user.index');
     }
 }
